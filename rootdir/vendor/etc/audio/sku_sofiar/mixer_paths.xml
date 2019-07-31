@@ -203,6 +203,7 @@
 	<ctl name="SLIMBUS_0_RX Port Mixer SLIM_7_TX" value="0" />
 	<!-- HFP end -->
 	<!-- echo reference -->
+	<ctl name="EC Reference Channels" value="Zero"/>
 	<ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
 	<ctl name="VOC_EXT_EC MUX" value="NONE" />
 
@@ -354,6 +355,7 @@
 
 	<path name="echo-reference">
 		<ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="EC Reference Channels" value="Two"/>
 	</path>
 
 	<path name="echo-reference handset">
@@ -370,6 +372,21 @@
 
 	<path name="echo-reference bt-sco-wb">
 		<ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_7_RX" />
+	</path>
+
+	<path name="echo-reference-voip">
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="EC Reference Channels" value="Two"/>
+	</path>
+
+	<path name="echo-reference-voip handset">
+		<ctl name="AUDIO_REF_EC_UL10 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="EC Reference Channels" value="One"/>
+	</path>
+
+	<path name="echo-reference-voip headphones">
+		<ctl name="AUDIO_REF_EC_UL10 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="EC Reference Channels" value="Two"/>
 	</path>
 
 	<path name="low-latency-playback">
