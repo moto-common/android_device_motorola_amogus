@@ -248,9 +248,6 @@
 	<!-- Incall Music End -->
 
 	<!-- SLIMBUS_7 (bt-sco/bt-a2dp) -->
-	<ctl name="BT SampleRate" value="KHZ_8" />
-	<ctl name="BT SampleRate RX" value="KHZ_8" />
-	<ctl name="BT SampleRate TX" value="KHZ_8" />
 	<ctl name="AFE Input Channels" value="Zero" />
 	<ctl name="SLIM7_RX ADM Channels" value="Zero" />
 
@@ -305,7 +302,6 @@
 	</path>
 
 	<path name="deep-buffer-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="deep-buffer-playback bt-sco" />
 	</path>
 
@@ -365,7 +361,6 @@
 	</path>
 
 	<path name="low-latency-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="low-latency-playback bt-sco" />
 	</path>
 
@@ -405,7 +400,6 @@
 	</path>
 
 	<path name="compress-offload-playback bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="compress-offload-playback bt-sco" />
 	</path>
 
@@ -432,7 +426,6 @@
 	</path>
 
 	<path name="audio-record bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="audio-record bt-sco" />
 	</path>
 
@@ -445,7 +438,6 @@
 	</path>
 
 	<path name="low-latency-record bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="low-latency-record bt-sco" />
 	</path>
 
@@ -499,7 +491,6 @@
 	</path>
 
 	<path name="voicemmode1-call bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="voicemmode1-call bt-sco" />
 	</path>
 
@@ -542,7 +533,6 @@
 	</path>
 
 	<path name="voicemmode2-call bt-sco-wb">
-		<ctl name="BT SampleRate" value="KHZ_16" />
 		<path name="voicemmode2-call bt-sco" />
 	</path>
 
