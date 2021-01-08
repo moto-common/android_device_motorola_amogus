@@ -72,6 +72,11 @@ function blob_fixup() {
         sed -i 's/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchdogEv/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchhogEv/g' "${2}"
         ;;
 
+    # vstab
+    vendor/lib/libmmcamera2_pproc_modules.so)
+        sed -i 's/ro.product.manufacturer/ro.broduct.manufacturer/g' "${2}"
+        ;;
+
     # gbp shim
     vendor/lib/libmot_gpu_mapper.so)
         patchelf --add-needed libgbp_shim.so "${2}"
