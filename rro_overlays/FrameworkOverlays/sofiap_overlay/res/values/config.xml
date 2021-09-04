@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="status_bar_height">122px</dimen>
+    <dimen name="status_bar_height_landscape">26dp</dimen>
+    <dimen name="status_bar_height_portrait">122px</dimen>
+    <dimen name="status_bar_icon_size">24dp</dimen>
+    <dimen name="quick_qs_offset_height">122px</dimen>
+    <string name="config_mainBuiltInDisplayCutout">M 128,0 L 0,0 L 0,120 L 128,120 Z @left</string>
+    <string name="config_mms_user_agent">motogstylus</string>
+    <string name="wifi_tether_configure_ssid_default">moto g stylus</string>
+    <dimen name="rounded_corner_radius">95px</dimen>
+</resources>
