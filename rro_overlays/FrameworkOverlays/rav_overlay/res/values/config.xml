@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="config_mainBuiltInDisplayCutout">M 80,0 L 0,0 L 0,80 L 80,80 Z @left</string>
+    <string name="config_mainBuiltInDisplayCutout">M 85,0 L 0,0 L 0,80 L 85,80 Z @left</string>
     <string name="config_mms_user_agent">motogfast</string>
     <string name="wifi_tether_configure_ssid_default">moto g fast</string>
     <integer-array name="config_autoBrightnessDisplayValuesNits">
