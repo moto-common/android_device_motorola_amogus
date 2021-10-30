@@ -1,0 +1,1 @@
+require board=trinket|amogus|rav|sofiar|sofia|sofiap|doha
