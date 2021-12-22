@@ -2,37 +2,27 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := fstab.$(TARGET_DEVICE)
-LOCAL_SRC_FILES := vendor/etc/fstab.edo
+LOCAL_SRC_FILES := vendor/etc/fstab.qcom
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := fstab.$(TARGET_DEVICE)
+LOCAL_MODULE_STEM := fstab.qcom
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ramdisk-fstab.$(TARGET_DEVICE)
-LOCAL_SRC_FILES := vendor/etc/fstab.edo
+LOCAL_MODULE := vendor-fstab.$(TARGET_DEVICE)
+LOCAL_SRC_FILES := vendor/etc/fstab.qcom
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := fstab.$(TARGET_DEVICE)
+LOCAL_MODULE_STEM := fstab.qcom
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_RAMDISK_OUT)
+LOCAL_MODULE_PATH := $(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.edo
-LOCAL_SRC_FILES := vendor/etc/init/init.edo.rc
+LOCAL_MODULE := init.sm4350
+LOCAL_SRC_FILES := vendor/etc/init/init.sm4350.rc
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := init.edo
-LOCAL_MODULE_SUFFIX := .rc
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := init.edo.pwr
-LOCAL_SRC_FILES := vendor/etc/init/init.edo.pwr.rc
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := init.edo.pwr
+LOCAL_MODULE_STEM := init.sm4350
 LOCAL_MODULE_SUFFIX := .rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
