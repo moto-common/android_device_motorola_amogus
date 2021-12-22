@@ -1,118 +1,116 @@
 ###################################
 # Dev block nodes
 #
+/persist                             u:object_r:rootfs:s0
 
 # Block device holding the GPT, where the A/B attributes are stored.
 /dev/block/sda                                                 u:object_r:root_block_device:s0
 
 # Block devices for the drive that holds the xbl_a and xbl_b partitions.
-/dev/block/sd[bc]1?                                            u:object_r:xbl_block_device:s0
+#/dev/block/sd[bc]1?                                            u:object_r:xbl_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/modem_[ab]      u:object_r:modem_block_device:s0
-/dev/block/bootdevice/by-name/modem_[ab]                       u:object_r:modem_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/modem_[ab]      u:object_r:modem_block_device:s0
+#/dev/block/bootdevice/by-name/modem_[ab]                       u:object_r:modem_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/modemst[12]     u:object_r:modem_block_device:s0
-/dev/block/bootdevice/by-name/modemst[12]                      u:object_r:modem_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/modemst[12]     u:object_r:modem_block_device:s0
+#/dev/block/bootdevice/by-name/modemst[12]                      u:object_r:modem_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg             u:object_r:modem_block_device:s0
-/dev/block/bootdevice/by-name/fsg                              u:object_r:modem_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg             u:object_r:modem_block_device:s0
+#/dev/block/bootdevice/by-name/fsg                              u:object_r:modem_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/fsc             u:object_r:modem_block_device:s0
-/dev/block/bootdevice/by-name/fsc                              u:object_r:modem_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/fsc             u:object_r:modem_block_device:s0
+#/dev/block/bootdevice/by-name/fsc                              u:object_r:modem_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/ssd             u:object_r:ssd_block_device:s0
-/dev/block/bootdevice/by-name/ssd                              u:object_r:ssd_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/ssd             u:object_r:ssd_block_device:s0
+#/dev/block/bootdevice/by-name/ssd                              u:object_r:ssd_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/dsp_[ab]        u:object_r:adsprpcd_block_device:s0
-/dev/block/bootdevice/by-name/dsp_[ab]                         u:object_r:adsprpcd_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/dsp_[ab]        u:object_r:adsprpcd_block_device:s0
+#/dev/block/bootdevice/by-name/dsp_[ab]                         u:object_r:adsprpcd_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/TA              u:object_r:ta_block_device:s0
-/dev/block/bootdevice/by-name/TA                               u:object_r:ta_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/userdata        u:object_r:userdata_block_device:s0
+#/dev/block/bootdevice/by-name/userdata                         u:object_r:userdata_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/userdata        u:object_r:userdata_block_device:s0
-/dev/block/bootdevice/by-name/userdata                         u:object_r:userdata_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/metadata        u:object_r:metadata_block_device:s0
+#/dev/block/bootdevice/by-name/metadata                         u:object_r:metadata_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/metadata        u:object_r:metadata_block_device:s0
-/dev/block/bootdevice/by-name/metadata                         u:object_r:metadata_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/boot_[ab]       u:object_r:boot_block_device:s0
+#/dev/block/bootdevice/by-name/boot_[ab]                        u:object_r:boot_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/boot_[ab]       u:object_r:boot_block_device:s0
-/dev/block/bootdevice/by-name/boot_[ab]                        u:object_r:boot_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/recovery_[ab]   u:object_r:recovery_block_device:s0
+#/dev/block/bootdevice/by-name/recovery_[ab]                    u:object_r:recovery_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/recovery_[ab]   u:object_r:recovery_block_device:s0
-/dev/block/bootdevice/by-name/recovery_[ab]                    u:object_r:recovery_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/misc            u:object_r:misc_block_device:s0
+#/dev/block/bootdevice/by-name/misc                             u:object_r:misc_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/misc            u:object_r:misc_block_device:s0
-/dev/block/bootdevice/by-name/misc                             u:object_r:misc_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/persist         u:object_r:persist_block_device:s0
+#/dev/block/bootdevice/by-name/persist                          u:object_r:persist_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/persist         u:object_r:persist_block_device:s0
-/dev/block/bootdevice/by-name/persist                          u:object_r:persist_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/rdimage_[ab]    u:object_r:ramdump_block_device:s0
+#/dev/block/bootdevice/by-name/rdimage_[ab]                     u:object_r:ramdump_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/rdimage_[ab]    u:object_r:ramdump_block_device:s0
-/dev/block/bootdevice/by-name/rdimage_[ab]                     u:object_r:ramdump_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/oem_[ab]        u:object_r:system_block_device:s0
+#/dev/block/bootdevice/by-name/oem_[ab]                         u:object_r:system_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/oem_[ab]        u:object_r:system_block_device:s0
-/dev/block/bootdevice/by-name/oem_[ab]                         u:object_r:system_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/abl_[ab]        u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/abl_[ab]                         u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/abl_[ab]        u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/abl_[ab]                         u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/bluetooth_[ab]  u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/bluetooth_[ab]                   u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/bluetooth_[ab]  u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/bluetooth_[ab]                   u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/cmnlib64_[ab]   u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/cmnlib64_[ab]                    u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/cmnlib64_[ab]   u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/cmnlib64_[ab]                    u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/cmnlib_[ab]     u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/cmnlib_[ab]                      u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/cmnlib_[ab]     u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/cmnlib_[ab]                      u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/devcfg_[ab]     u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/devcfg_[ab]                      u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/devcfg_[ab]     u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/devcfg_[ab]                      u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/hyp_[ab]        u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/hyp_[ab]                         u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/hyp_[ab]        u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/hyp_[ab]                         u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/keymaster_[ab]  u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/keymaster_[ab]                   u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/keymaster_[ab]  u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/keymaster_[ab]                   u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/mdtp_[ab]       u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/mdtp_[ab]                        u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/mdtp_[ab]       u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/mdtp_[ab]                        u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/mdtpsecapp_[ab] u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/mdtpsecapp_[ab]                  u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/mdtpsecapp_[ab] u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/mdtpsecapp_[ab]                  u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/pmic_[ab]       u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/pmic_[ab]                        u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/pmic_[ab]       u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/pmic_[ab]                        u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/rpm_[ab]        u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/rpm_[ab]                         u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/rpm_[ab]        u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/rpm_[ab]                         u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/tz_[ab]         u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/tz_[ab]                          u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/tz_[ab]         u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/tz_[ab]                          u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/tzxfl_[ab]      u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/tzxfl_[ab]                       u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/tzxfl_[ab]      u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/tzxfl_[ab]                       u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/tzxflattest_[ab] u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/tzxflattest_[ab]                 u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/tzxflattest_[ab] u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/tzxflattest_[ab]                 u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/xfl_[ab]        u:object_r:ab_block_device:s0
+#/dev/block/bootdevice/by-name/xfl_[ab]                         u:object_r:ab_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/xfl_[ab]        u:object_r:ab_block_device:s0
-/dev/block/bootdevice/by-name/xfl_[ab]                         u:object_r:ab_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/xbl_[ab]        u:object_r:xbl_block_device:s0
+#/dev/block/bootdevice/by-name/xbl_[ab]                         u:object_r:xbl_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/xbl_[ab]        u:object_r:xbl_block_device:s0
-/dev/block/bootdevice/by-name/xbl_[ab]                         u:object_r:xbl_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/super           u:object_r:super_block_device:s0
+#/dev/block/bootdevice/by-name/super                            u:object_r:super_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/super           u:object_r:super_block_device:s0
-/dev/block/bootdevice/by-name/super                            u:object_r:super_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/dtbo_[ab]       u:object_r:dtbo_block_device:s0
+#/dev/block/bootdevice/by-name/dtbo_[ab]                        u:object_r:dtbo_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/dtbo_[ab]       u:object_r:dtbo_block_device:s0
-/dev/block/bootdevice/by-name/dtbo_[ab]                        u:object_r:dtbo_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta(_system)?_[ab]   u:object_r:vbmeta_block_device:s0
+#/dev/block/bootdevice/by-name/vbmeta(_system)?_[ab]                    u:object_r:vbmeta_block_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/vbmeta(_system)?_[ab]   u:object_r:vbmeta_block_device:s0
-/dev/block/bootdevice/by-name/vbmeta(_system)?_[ab]                    u:object_r:vbmeta_block_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/mdm1m9kefs[1-3]         u:object_r:efs_boot_device:s0
+#/dev/block/bootdevice/by-name/mdm1m9kefs[1-3]                          u:object_r:efs_boot_device:s0
+#/dev/block/platform/soc/1d84000\.ufshc/by-name/mdmddr                  u:object_r:efs_boot_device:s0
+#/dev/block/bootdevice/by-name/mdmddr                                   u:object_r:efs_boot_device:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/mdm1m9kefs[1-3]         u:object_r:efs_boot_device:s0
-/dev/block/bootdevice/by-name/mdm1m9kefs[1-3]                          u:object_r:efs_boot_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/mdmddr                  u:object_r:efs_boot_device:s0
-/dev/block/bootdevice/by-name/mdmddr                                   u:object_r:efs_boot_device:s0
-
-/dev/block/zram0                                               u:object_r:swap_block_device:s0
+#/dev/block/zram0                                               u:object_r:swap_block_device:s0

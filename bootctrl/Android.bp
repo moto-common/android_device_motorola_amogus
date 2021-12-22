@@ -1,6 +1,5 @@
-
 //
-// Copyright (C) 2018 The Android Open Source Project
+// Copyright (C) 2019 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +14,47 @@
 // limitations under the License.
 //
 
+filegroup {
+    name: "bootctrl_hal_src",
+    srcs: [
+        "boot_control.cpp",
+    ],
+}
+
+cc_defaults {
+    name: "bootctrl_hal_defaults",
+    proprietary: true,
+    recovery_available: true,
+    header_libs: [
+        "libhardware_headers",
+        "libsystem_headers",
+    ],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libz",
+    ],
+    owner: "qti",
+    relative_install_path: "hw",
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    srcs: [
+        ":bootctrl_hal_src",
+    ],
+
+}
+
 cc_library {
-    name: "bootctrl.sm8250",
+    name: "bootctrl.sm4350-common",
     defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils"],
+    static_libs: ["libgptutils.sm4350-common"],
+}
+
+cc_library_shared {
+    name: "android.hardware.boot@1.1-impl-qti",
+    stem: "android.hardware.boot@1.0-impl-1.1-qti",
+    defaults: ["android.hardware.boot@1.1-impl-qti_defaults"],
+    static_libs: ["libgptutils.sm4350-common"],
 }
