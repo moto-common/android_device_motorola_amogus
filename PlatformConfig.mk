@@ -24,23 +24,25 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := generic
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
+BOARD_RAMDISK_OFFSET     := 0x01000000
 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += androidboot.bootdevice=1d84000.ufshc
 BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
-BOARD_KERNEL_CMDLINE += msm_drm.blhack_dsi_display0=dsi_panel_somc_edo_cmd:config0
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 
 # Serial console
 #BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
 
 TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
-TARGET_RECOVERY_FSTAB ?= $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.edo
+TARGET_RECOVERY_FSTAB ?= $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.qcom
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy_platform
+
+# Boot Image Header
+BOARD_BOOT_HEADER_VERSION := 3
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
@@ -48,11 +50,17 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_JOURNAL_SIZE := 0
 BOARD_VENDORIMAGE_EXTFS_INODE_COUNT := 4096
 
-# Also build product image
+# Build product image
 TARGET_COPY_OUT_PRODUCT := product
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_JOURNAL_SIZE := 0
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := 4096
+
+# Build system_ext image
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_EXTIMAGE_JOURNAL_SIZE := 0
+BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := 4096
 
 # This platform has a metadata partition: declare this
 # to create a mount point for it
@@ -70,9 +78,12 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 # so if we turn on recovery as boot, we always end up
 # booting to recovery. Nice!
 TARGET_NO_RECOVERY := false
-BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_USES_RECOVERY_AS_BOOT := true
 
 # DTBO partition definitions
 TARGET_NEEDS_DTBOIMAGE ?= true
 
-include device/sony/common/CommonConfig.mk
+# Audio
+AUDIO_FEATURE_ENABLED_GKI := true
+
+include device/motorola/common/CommonConfig.mk

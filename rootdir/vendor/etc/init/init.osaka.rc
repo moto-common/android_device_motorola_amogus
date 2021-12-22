@@ -12,14 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-on post-fs
-    rm /persist/bluetooth/.bt_nv.bin
-    rmdir /persist/bluetooth
-
-on post-fs-data
-    # Enable WLAN cold boot calibration
-    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6390/fs_ready 1
-
 on init
     # Boot time fs tune
     write /sys/block/sda/queue/iostats 0
