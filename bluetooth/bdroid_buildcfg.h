@@ -30,17 +30,21 @@
 static inline const char* getBTDefaultName()
 {
     char device[PROPERTY_VALUE_MAX];
-    property_get("ro.boot.hardware", device, "");
+    property_get("ro.boot.device", device, "");
 
-    if (!strcmp("pdx203", device)) {
-        return "Xperia 1 II";
+    if (!strcmp("denver", device)) {
+        return "Moto G Stylus 5G";
     }
 
-    if (!strcmp("pdx206", device)) {
-        return "Xperia 5 II";
+    if (!strcmp("ibiza", device)) {
+        return "Moto G50";
     }
 
-    return "Xperia";
+    if (!strcmp("cypfq", device)) {
+        return "Moto G51";
+    }
+
+    return "Moto G";
 }
 
 #define BTM_DEF_LOCAL_NAME getBTDefaultName()

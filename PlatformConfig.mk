@@ -26,13 +26,7 @@ BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_RAMDISK_OFFSET     := 0x01000000
 
-BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += swiotlb=2048
-BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
-
-# Serial console
-#BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa90000
 
 TARGET_RECOVERY_WIPE := $(PLATFORM_COMMON_PATH)/rootdir/recovery.wipe
 TARGET_RECOVERY_FSTAB ?= $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/fstab.qcom
@@ -73,11 +67,7 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM ?= SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
-# This target has recovery partitions and bootloader
-# will not set the skip_initramfs cmdline bootparam,
-# so if we turn on recovery as boot, we always end up
-# booting to recovery. Nice!
-TARGET_NO_RECOVERY := false
+# This target has no recovery partition
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # DTBO partition definitions
@@ -85,5 +75,8 @@ TARGET_NEEDS_DTBOIMAGE ?= true
 
 # Audio
 AUDIO_FEATURE_ENABLED_GKI := true
+
+# Display
+TARGET_USES_GRALLOC4 := true
 
 include device/motorola/common/CommonConfig.mk
