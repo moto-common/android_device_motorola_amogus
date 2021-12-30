@@ -17,5 +17,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="security_settings_fingerprint_enroll_find_sensor_message">
-        Locate the fingerprint sensor on the side of your phone.</string>
+        Locate the fingerprint sensor on the back of your phone.</string>
 </resources>
