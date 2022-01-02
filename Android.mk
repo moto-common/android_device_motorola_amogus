@@ -1,4 +1,4 @@
-ifeq (holi,$(PRODUCT_PLATFORM))
+ifeq (amogus,$(TARGET_DEVICE))
 
 LOCAL_PATH := $(call my-dir)
 
