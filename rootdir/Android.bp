@@ -1,0 +1,11 @@
+// Scripts
+
+cc_prebuilt_binary {
+    name: "init.amogus.sh",
+    srcs: ["vendor/bin/init.amogus.sh"],
+    init_rc: ["vendor/etc/init/init.amogus.rc"],
+    vendor: true,
+    strip: {
+        none: true,
+    },
+}
