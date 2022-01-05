@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=sm6125-common
+DEVICE=amogus
 VENDOR=motorola
 
 # Load extract utilities and do some sanity checks.

@@ -9,7 +9,7 @@ cc_library {
     recovery_available: true,
     shared_libs: [
         "android.hardware.boot@1.1",
-        "libgptutils.sm6125-common",
+        "libgptutils.amogus",
         "libbase",
         "libcutils",
         "liblog",
