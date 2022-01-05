@@ -177,19 +177,19 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.holi
+    audio.primary.trinket
 
 # GFX
 PRODUCT_PACKAGES += \
-    copybit.holi \
-    gralloc.holi \
-    hwcomposer.holi \
+    copybit.trinket \
+    gralloc.trinket \
+    hwcomposer.trinket \
     libdisplayconfig.qti.vendor \
-    memtrack.holi
+    memtrack.trinket
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.holi
+    gps.trinket
 
 # Sensors init
 PRODUCT_PACKAGES += \
@@ -287,6 +287,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/common/vendor/init/holi/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh
 
 PRODUCT_PACKAGES += \
+    init.amogus.sh \
     init.mmi.charge_only.rc \
     init.mmi.chipset.rc \
     init.mmi.overlay.rc \
@@ -295,7 +296,13 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     vendor_modprobe.sh
 
-PRODUCT_SOONG_NAMESPACES += device/qcom/common/vendor/init
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH) \
+    device/qcom/common/vendor/init
+
+# Camera
+PRODUCT_PACKAGES += \
+    libgui_vendor
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)

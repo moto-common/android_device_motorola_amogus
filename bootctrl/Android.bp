@@ -47,14 +47,14 @@ cc_defaults {
 }
 
 cc_library {
-    name: "bootctrl.sm6125-common",
+    name: "bootctrl.amogus",
     defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.sm6125-common"],
+    static_libs: ["libgptutils.amogus"],
 }
 
 cc_library_shared {
     name: "android.hardware.boot@1.1-impl-qti",
     stem: "android.hardware.boot@1.0-impl-1.1-qti",
     defaults: ["android.hardware.boot@1.1-impl-qti_defaults"],
-    static_libs: ["libgptutils.sm6125-common"],
+    static_libs: ["libgptutils.amogus"],
 }
