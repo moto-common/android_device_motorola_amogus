@@ -35,6 +35,10 @@ PRODUCT_PACKAGES += \
     ramdisk-fstab.amogus \
     init.recovery.qcom.rc
 
+# Device Folders
+PRODUCT_PACKAGES += \
+    amogus_folders
+
 # Kernel Headers
 PRODUCT_VENDOR_KERNEL_HEADERS := device/motorola/amogus-kernel/kernel-headers
 
@@ -43,11 +47,6 @@ TRINKET := trinket
 KERNEL_VERSION := 4.14
 PRODUCT_PLATFORM_MOT := true
 TARGET_BOARD_PLATFORM := $(TRINKET)
-
-# Audio Configuration
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(DEVICE_PATH)/rootdir/vendor/etc/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf
 
 # Telephony Packages (AOSP)
 PRODUCT_PACKAGES += \
@@ -129,15 +128,27 @@ PRODUCT_COPY_FILES += \
      frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
      frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
+#    $(DEVICE_PATH)/rootdir/vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
+
 # Audio
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
-    $(DEVICE_PATH)/rootdir/vendor/etc/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(DEVICE_PATH)/rootdir/vendor/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/rootdir/vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt
 
-#PRODUCT_COPY_FILES += \
-#    $(DEVICE_PATH)/rootdir/vendor/etc/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf
+# Audio - TAS2562 (RAV)
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_platform_info_moto_rav.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/default_volume_tables.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/mixer_paths_moto_rav.xml
+
+# Audio - Cirrus (SOFIA)
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_platform_info_moto_sofia.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/default_volume_tables.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/mixer_paths_moto_sofia.xml
 
 # Media
 PRODUCT_COPY_FILES += \
