@@ -58,7 +58,7 @@ PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_PROPERTY_OVERRIDES := \
-    ro.sf.lcd_density=420
+    ro.sf.lcd_density=280
 
 # Keymaster
 TARGET_KEYMASTER_V4_1 := true
