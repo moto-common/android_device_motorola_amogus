@@ -311,8 +311,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     device/qcom/common/vendor/init
 
-# Camera
+# Camera Requirements
 PRODUCT_PACKAGES += \
+    libgbp_shim \
     libgui_vendor
 
 # Inherit from those products. Most specific first.
