@@ -224,11 +224,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # QCOM Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcom.bluetooth.soc=hastings
+    persist.vendor.qcom.bluetooth.soc=cherokee
 
 # Legacy BT property (will be removed in S)
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.qcom.bluetooth.soc=hastings
+    vendor.qcom.bluetooth.soc=cherokee
 
 # Audio - Android System
 PRODUCT_PROPERTY_OVERRIDES += \
