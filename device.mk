@@ -321,6 +321,6 @@ PRODUCT_PACKAGES += \
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # include board vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/amogus/amogus-vendor.mk)
