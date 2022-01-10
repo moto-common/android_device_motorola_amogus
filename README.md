@@ -1,17 +1,15 @@
-Edo platform
+Trinket platform
 ============
 Copyright (C) Sony Mobile Communications 2019
 ---------------------------------------------
 
-Android device configuration for the edo platform (**SM8250**).
+Android device configuration for the trinket platform (**SM6125**).
 
 ### Supported devices
 
 | Device | Codename |
 |-|:-:|
-| Xperia 1 II | [pdx203](https://github.com/sonyxperiadev/device-sony-pdx203) |
-| Xperia 5 II | [pdx206](https://github.com/sonyxperiadev/device-sony-pdx206) |
-
-### Build instructions
-
-https://developer.sony.com/develop/open-devices/guides/aosp-build-instructions/
+| Moto G8/G Fast (2020) | rav |
+| Moto G Power (2020) | sofia |
+| Moto G Stylus / G Pro (2020) | sofiap |
+| Moto G8 Power | sofiar |
