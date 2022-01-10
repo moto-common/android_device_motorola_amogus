@@ -309,6 +309,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     device/qcom/common/vendor/init
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.tof.direct=1
+
 # Camera Requirements
 PRODUCT_PACKAGES += \
     libgbp_shim \
