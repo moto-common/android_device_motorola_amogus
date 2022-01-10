@@ -32,16 +32,20 @@ static inline const char* getBTDefaultName()
     char device[PROPERTY_VALUE_MAX];
     property_get("ro.boot.device", device, "");
 
-    if (!strcmp("denver", device)) {
-        return "Moto G Stylus 5G";
+    if (!strcmp("rav", device)) {
+        return "Moto G8";
     }
 
-    if (!strcmp("ibiza", device)) {
-        return "Moto G50";
+    if (!strcmp("sofia", device)) {
+        return "Moto G Power (2020)";
     }
 
-    if (!strcmp("cypfq", device)) {
-        return "Moto G51";
+    if (!strcmp("sofiar", device)) {
+        return "Moto G8 Power";
+    }
+
+    if (!strcmp("sofiap", device)) {
+        return "Moto G Stylus";
     }
 
     return "Moto G";
