@@ -1,14 +1,3 @@
-# Audio-ACDB - from rav
-#vendor/etc/acdbdata/adsp_avs_config.acdb
-vendor/etc/acdbdata/na/Bluetooth_cal.acdb:vendor/etc/acdbdata/rav/Bluetooth_cal.acdb
-vendor/etc/acdbdata/na/Codec_cal.acdb:vendor/etc/acdbdata/rav/Codec_cal.acdb
-vendor/etc/acdbdata/na/General_cal.acdb:vendor/etc/acdbdata/rav/General_cal.acdb
-vendor/etc/acdbdata/na/Global_cal.acdb:vendor/etc/acdbdata/rav/Global_cal.acdb
-vendor/etc/acdbdata/na/Handset_cal.acdb:vendor/etc/acdbdata/rav/Handset_cal.acdb
-vendor/etc/acdbdata/na/Hdmi_cal.acdb:vendor/etc/acdbdata/rav/Hdmi_cal.acdb
-vendor/etc/acdbdata/na/Headset_cal.acdb:vendor/etc/acdbdata/rav/Headset_cal.acdb
-vendor/etc/acdbdata/na/Speaker_cal.acdb:vendor/etc/acdbdata/rav/Speaker_cal.acdb
-
 # Camera
 vendor/lib/hw/camera.trinket.so
 vendor/lib/libcapiv2svacnn.so
@@ -247,15 +236,6 @@ vendor/lib/libchromatix_mot_s5kgm1sp_postproc.so
 vendor/lib/libchromatix_mot_s5kgm1sp_preview.so
 vendor/lib/libchromatix_mot_s5kgm1sp_snapshot.so
 vendor/lib/libchromatix_mot_s5kgm1sp_video.so
-
-# Camera-configs - from rav
-vendor/etc/camera/cameraconfig.txt
-vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_rav.xml
-vendor/etc/camera/dual_golden.bin
-vendor/etc/camera/mot_ov02a_chromatix.xml
-vendor/etc/camera/mot_ov16e10_chromatix.xml
-vendor/etc/camera/mot_s5k4h7yx03_chromatix.xml
-vendor/etc/camera/mot_s5k4h7_chromatix.xml
 
 # Camera-firmware
 vendor/firmware/cpp_firmware_v1_10_0.fw
@@ -496,17 +476,6 @@ vendor/lib64/libets_teeclient.so
 vendor/lib64/vendor.egistec.hardware.fingerprint@2.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# Firmware - from rav
-vendor/firmware/focaltech-boe-ft8009-09-0000-rav.bin
-vendor/firmware/focaltech-boev-ft8009-0e-0000-rav.bin
-vendor/firmware/focaltech-dj-ft8009-0b-0000-rav.bin
-vendor/firmware/inxr_Himax_firmware.bin
-vendor/firmware/inxr_hx_criteria.csv
-vendor/firmware/inx_Himax_firmware.bin
-vendor/firmware/inx_hx_criteria.csv
-vendor/firmware/novatek_ts_fw.bin
-vendor/firmware/novatek_ts_mp.bin
-
 # Graphics Firmware
 vendor/firmware/a612_rgmu.bin
 vendor/firmware/a630_gmu.bin
@@ -633,7 +602,7 @@ system_ext/framework/qcom-moto-telephony-ext.jar|9f9378285097e7da36444c40d00d022
 
 # Radio
 -system_ext/app/atfwd/atfwd.apk
--system_ext/app/datastatusnotification/datastatusnotification.apk
+#-system_ext/app/datastatusnotification/datastatusnotification.apk
 -system_ext/app/embms/embms.apk
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/embms.xml
@@ -1007,51 +976,6 @@ vendor/lib/sensors.tof.vl53l1.so
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.tof.vl53l1.so
 
-# Sensor Configs - from rav
-vendor/etc/sensors/config/ak991x_polling_0.json:vendor/etc/sensors/config-rav/ak991x_polling_0.json
-vendor/etc/sensors/config/default_sensors.json:vendor/etc/sensors/config-rav/default_sensors.json
-vendor/etc/sensors/config/icm4x6xx_0.json:vendor/etc/sensors/config-rav/icm4x6xx_0.json
-vendor/etc/sensors/config/lsm6dso_0.json:vendor/etc/sensors/config-rav/lsm6dso_0.json
-vendor/etc/sensors/config/lsm6dso_0_16g.json:vendor/etc/sensors/config-rav/lsm6dso_0_16g.json
-vendor/etc/sensors/config/lsm6dso_0_8g.json:vendor/etc/sensors/config-rav/lsm6dso_0_8g.json
-vendor/etc/sensors/config/ltr2568_0.json:vendor/etc/sensors/config-rav/ltr2568_0.json
-vendor/etc/sensors/config/mmc5603x_0.json:vendor/etc/sensors/config-rav/mmc5603x_0.json
-vendor/etc/sensors/config/mot_chopchop.json:vendor/etc/sensors/config-rav/mot_chopchop.json
-vendor/etc/sensors/config/mot_devorient.json:vendor/etc/sensors/config-rav/mot_devorient.json
-vendor/etc/sensors/config/mot_dsp_0.json:vendor/etc/sensors/config-rav/mot_dsp_0.json
-vendor/etc/sensors/config/mot_ltv.json:vendor/etc/sensors/config-rav/mot_ltv.json
-vendor/etc/sensors/config/nicobar_ak991x_0.json:vendor/etc/sensors/config-rav/nicobar_ak991x_0.json
-vendor/etc/sensors/config/nicobar_icm4x6xx_0-i3c.json:vendor/etc/sensors/config-rav/nicobar_icm4x6xx_0-i3c.json
-vendor/etc/sensors/config/nicobar_lsm6dso_0.json:vendor/etc/sensors/config-rav/nicobar_lsm6dso_0.json
-vendor/etc/sensors/config/nicobar_ltr2568_0.json:vendor/etc/sensors/config-rav/nicobar_ltr2568_0.json
-vendor/etc/sensors/config/nicobar_mmc5603x_0.json:vendor/etc/sensors/config-rav/nicobar_mmc5603x_0.json
-vendor/etc/sensors/config/nicobar_mot_dsp_0.json:vendor/etc/sensors/config-rav/nicobar_mot_dsp_0.json
-vendor/etc/sensors/config/nicobar_tsl2540.json:vendor/etc/sensors/config-rav/nicobar_tsl2540.json
-vendor/etc/sensors/config/sns_amd.json:vendor/etc/sensors/config-rav/sns_amd.json
-vendor/etc/sensors/config/sns_amd_sw_disabled.json:vendor/etc/sensors/config-rav/sns_amd_sw_disabled.json
-vendor/etc/sensors/config/sns_amd_sw_enabled.json:vendor/etc/sensors/config-rav/sns_amd_sw_enabled.json
-vendor/etc/sensors/config/sns_aont.json:vendor/etc/sensors/config-rav/sns_aont.json
-vendor/etc/sensors/config/sns_ccd.json:vendor/etc/sensors/config-rav/sns_ccd.json
-vendor/etc/sensors/config/sns_cm.json:vendor/etc/sensors/config-rav/sns_cm.json
-vendor/etc/sensors/config/sns_dae.json:vendor/etc/sensors/config-rav/sns_dae.json
-vendor/etc/sensors/config/sns_diag_filter.json:vendor/etc/sensors/config-rav/sns_diag_filter.json
-vendor/etc/sensors/config/sns_distance_bound.json:vendor/etc/sensors/config-rav/sns_distance_bound.json
-vendor/etc/sensors/config/sns_dpc.json:vendor/etc/sensors/config-rav/sns_dpc.json
-vendor/etc/sensors/config/sns_fmv.json:vendor/etc/sensors/config-rav/sns_fmv.json
-vendor/etc/sensors/config/sns_geomag_rv.json:vendor/etc/sensors/config-rav/sns_geomag_rv.json
-vendor/etc/sensors/config/sns_gyro_cal.json:vendor/etc/sensors/config-rav/sns_gyro_cal.json
-vendor/etc/sensors/config/sns_mag_cal.json:vendor/etc/sensors/config-rav/sns_mag_cal.json
-vendor/etc/sensors/config/sns_pedometer.json:vendor/etc/sensors/config-rav/sns_pedometer.json
-vendor/etc/sensors/config/sns_rmd.json:vendor/etc/sensors/config-rav/sns_rmd.json
-vendor/etc/sensors/config/sns_rotv.json:vendor/etc/sensors/config-rav/sns_rotv.json
-vendor/etc/sensors/config/sns_smd.json:vendor/etc/sensors/config-rav/sns_smd.json
-vendor/etc/sensors/config/sns_tilt.json:vendor/etc/sensors/config-rav/sns_tilt.json
-vendor/etc/sensors/config/sns_tilt_sw_disabled.json:vendor/etc/sensors/config-rav/sns_tilt_sw_disabled.json
-vendor/etc/sensors/config/sns_tilt_sw_enabled.json:vendor/etc/sensors/config-rav/sns_tilt_sw_enabled.json
-vendor/etc/sensors/config/tsl2540.json:vendor/etc/sensors/config-rav/tsl2540.json
-vendor/etc/sensors/hals.conf
-vendor/etc/sensors/sns_reg_config
-
 # Sensor Configs
 vendor/etc/sensors/proto/descriptor.proto
 vendor/etc/sensors/proto/mot_camgest.proto
@@ -1135,9 +1059,6 @@ vendor/etc/sensors/proto/sns_tilt.proto
 vendor/etc/sensors/proto/sns_tilt_to_wake.proto
 vendor/etc/sensors/proto/sns_ultra_violet.proto
 vendor/etc/sensors/proto/sns_wrist_tilt_gesture.proto
-
-# Thermal - from rav
-vendor/etc/thermal-engine-rav.conf
 
 # TEMP
 vendor/lib/libqsap_sdk.so
