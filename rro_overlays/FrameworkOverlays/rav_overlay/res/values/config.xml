@@ -3,65 +3,6 @@
     <string name="config_mainBuiltInDisplayCutout">M 85,0 L 0,0 L 0,80 L 85,80 Z @left</string>
     <string name="config_mms_user_agent">motogfast</string>
     <string name="wifi_tether_configure_ssid_default">moto g fast</string>
-    <integer-array name="config_autoBrightnessDisplayValuesNits">
-        <item>3</item>
-        <item>20</item>
-        <item>70</item>
-        <item>110</item>
-        <item>130</item>
-        <item>150</item>
-        <item>180</item>
-        <item>225</item>
-        <item>270</item>
-        <item>300</item>
-        <item>315</item>
-        <item>420</item>
-        <item>450</item>
-    </integer-array>
-    <integer-array name="config_autoBrightnessLevels">
-        <item>2</item>
-        <item>10</item>
-        <item>50</item>
-        <item>90</item>
-        <item>100</item>
-        <item>150</item>
-        <item>500</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>1300</item>
-        <item>2000</item>
-        <item>3000</item>
-    </integer-array>
-    <integer-array name="config_screenBrightnessBacklight">
-        <item>2</item>
-        <item>11</item>
-        <item>38</item>
-        <item>60</item>
-        <item>71</item>
-        <item>82</item>
-        <item>99</item>
-        <item>123</item>
-        <item>148</item>
-        <item>165</item>
-        <item>173</item>
-        <item>230</item>
-        <item>247</item>
-    </integer-array>
-    <integer-array name="config_screenBrightnessNits">
-        <item>3</item>
-        <item>20</item>
-        <item>70</item>
-        <item>110</item>
-        <item>130</item>
-        <item>150</item>
-        <item>180</item>
-        <item>225</item>
-        <item>270</item>
-        <item>300</item>
-        <item>315</item>
-        <item>420</item>
-        <item>450</item>
-    </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
         <item>34</item>
     </integer-array>
