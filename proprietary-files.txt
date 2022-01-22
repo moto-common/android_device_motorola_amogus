@@ -995,8 +995,10 @@ vendor/bin/capsense_reset
 vendor/bin/vl53l1_daemon
 vendor/lib/lib_motsensorlistener.so
 vendor/lib/sensors.moto.so
+vendor/lib/sensors.ssc.so
 vendor/lib/sensors.tof.vl53l1.so
 vendor/lib64/sensors.moto.so
+vendor/lib64/sensors.ssc.so
 vendor/lib64/sensors.tof.vl53l1.so
 
 # Sensor Configs
