@@ -197,10 +197,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ueventd
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.primary.trinket
-
 # GFX
 PRODUCT_PACKAGES += \
     copybit.trinket \
@@ -243,18 +239,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee
 
-# Audio - Android System
-PRODUCT_PROPERTY_OVERRIDES += \
-    aaudio.mmap_policy=2 \
-    aaudio.mmap_exclusive_policy=2 \
-    aaudio.hw_burst_min_usec=2000 \
-    af.fast_track_multiplier=1
-
 # Audio - QCOM HAL
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.concurrent_capture.enable=true \
-    vendor.audio.feature.compress_in.enable=true \
-    vendor.audio.offload.buffer.size.kb=32
+    vendor.audio.feature.compress_in.enable=true
 
 # Audio - QCOM proprietary
 PRODUCT_PROPERTY_OVERRIDES += \
