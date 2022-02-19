@@ -13,6 +13,7 @@
 # limitations under the License.
 
 on init
+    start vendor.amogus
     # Boot time fs tune
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
@@ -66,3 +67,4 @@ service vendor.amogus /vendor/bin/init.amogus.sh
     class core
     user root
     oneshot
+    disabled
