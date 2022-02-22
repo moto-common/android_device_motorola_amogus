@@ -284,7 +284,7 @@ vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_isp_modules.so
 vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_mct_shimlayer.so
-vendor/lib/libmmcamera2_pproc_modules.so
+vendor/lib/libmmcamera2_pproc_modules.so|6041cb81580dfc05f870c2beb15b80b88a8b8d91
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_q3a_core.so
 vendor/lib/libmmcamera2_sensor_modules.so
