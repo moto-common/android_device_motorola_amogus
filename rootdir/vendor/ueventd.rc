@@ -138,8 +138,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/virtual/input/input*        pollrate_ms    0660    input    system
 
 # laser sensor access
-/sys/devices/virtual/input/input*        enable_ps_sensor 0660  system   system
-/sys/devices/virtual/input/input*        set_delay_ms     0660  system   system
+/sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
+/sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
+/sys/devices/virtual/input/input*                   do_flush         0660  system   input
 
 # UIO devices
 /dev/uio0                 0660   system     system
