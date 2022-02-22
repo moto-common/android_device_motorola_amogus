@@ -28,6 +28,13 @@ vendor/firmware/inx_hx_criteria.csv
 vendor/firmware/novatek_ts_fw.bin
 vendor/firmware/novatek_ts_mp.bin
 
+# QDCM
+vendor/etc/qdcm_calib_data_mipi_mot_vid_boev_720p_639.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_dj_720p_639.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_inx_720p_639.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_inxr_720p_639.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_tm_720p_639.xml
+
 # Sensor Configs
 vendor/etc/sensors/config/ak991x_polling_0.json:vendor/etc/sensors/config-rav/ak991x_polling_0.json
 vendor/etc/sensors/config/default_sensors.json:vendor/etc/sensors/config-rav/default_sensors.json
