@@ -1,3 +1,5 @@
+# These files are from S0PR32.44-11-8 unless specified otherwise
+
 # ACDB Loader
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -260,6 +262,14 @@ vendor/lib/libchromatix_mot_s5kgm1sp_preview.so
 vendor/lib/libchromatix_mot_s5kgm1sp_snapshot.so
 vendor/lib/libchromatix_mot_s5kgm1sp_video.so
 
+# Camera-configs
+vendor/etc/camera/cameraconfig.txt
+vendor/etc/camera/mot_ov02a_chromatix.xml
+vendor/etc/camera/mot_ov16885_chromatix.xml
+vendor/etc/camera/mot_ov16a1q_chromatix.xml
+vendor/etc/camera/mot_ov16a1q_rear_chromatix.xml
+vendor/etc/camera/mot_s5kgm1sp_chromatix.xml
+
 # Camera-firmware
 vendor/firmware/cpp_firmware_v1_10_0.fw
 vendor/firmware/cpp_firmware_v1_12_0.fw
@@ -284,7 +294,7 @@ vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_isp_modules.so
 vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_mct_shimlayer.so
-vendor/lib/libmmcamera2_pproc_modules.so|6041cb81580dfc05f870c2beb15b80b88a8b8d91
+vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_q3a_core.so
 vendor/lib/libmmcamera2_sensor_modules.so
@@ -348,11 +358,12 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder46.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
-vendor/lib/libmmcamera_mot_ov02a_eeprom.so
 vendor/lib/libmmcamera_mot_ov02a.so
+vendor/lib/libmmcamera_mot_ov02a_eeprom.so
 vendor/lib/libmmcamera_mot_ov12a10ff.so
 vendor/lib/libmmcamera_mot_ov16885.so
 vendor/lib/libmmcamera_mot_ov16885_eeprom.so
+vendor/lib/libmmcamera_mot_ov16a1q.so
 vendor/lib/libmmcamera_mot_ov16a1q_eeprom.so
 vendor/lib/libmmcamera_mot_ov16e10.so
 vendor/lib/libmmcamera_mot_ov16e10_eeprom.so
@@ -360,6 +371,7 @@ vendor/lib/libmmcamera_mot_ov8856.so
 vendor/lib/libmmcamera_mot_ov8856_eeprom.so
 vendor/lib/libmmcamera_mot_s5k2x5sp.so
 vendor/lib/libmmcamera_mot_s5k2x5sp_eeprom.so
+vendor/lib/libmmcamera_mot_s5k4h7.so
 vendor/lib/libmmcamera_mot_s5k4h7yx03.so
 vendor/lib/libmmcamera_mot_s5k4h7yx03_eeprom.so
 vendor/lib/libmmcamera_mot_s5k4h7_eeprom.so
@@ -824,13 +836,7 @@ vendor/radio/qcril_database/upgrade/7_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/8_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
-<<<<<<< HEAD
 # Radio-IMS
-=======
-# Radio IMS
-etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
-framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
->>>>>>> 069ed8899 (sm4250-common: Move moto-telephony.jar to system_ext and remove unused moto jar)
 -system_ext/app/uceShimService/uceShimService.apk
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml

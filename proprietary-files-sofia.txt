@@ -8,20 +8,21 @@ vendor/etc/acdbdata/Hdmi_cal.acdb:vendor/etc/acdbdata/sofia/Hdmi_cal.acdb
 vendor/etc/acdbdata/Headset_cal.acdb:vendor/etc/acdbdata/sofia/Headset_cal.acdb
 vendor/etc/acdbdata/Speaker_cal.acdb:vendor/etc/acdbdata/sofia/Speaker_cal.acdb
 
-# Camera Configs - from sofia R
-vendor/etc/camera/dual_golden.bin:vendor/etc/camera/dual_golden_sofia.bin
+# Camera - from sofia R
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofia.xml
-vendor/etc/camera/mot_ov16a1q_chromatix.xml
-vendor/etc/camera/mot_ov16e10_chromatix.xml
-vendor/lib/libmmcamera_mot_ov02a.so:vendor/lib/libmmcamera_mot_ov02a_sofia.so
-vendor/lib/libmmcamera_mot_ov16a1q.so
-vendor/lib/libmmcamera_mot_s5k4h7.so
+
+# Camera - from sofiar R
+vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiar.xml
+vendor/etc/camera/dual_golden.bin:vendor/etc/camera/dual_golden_sofiar.bin
+
+# Camera - from sofiap_ao S
+vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiap.xml
 
 # Display Calibration - from sofia R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_auo_1080p_636.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_636.xml
 
-# Firmware - sofia R
+# Firmware - from sofia R
 vendor/firmware/aw8695_haptic.bin
 vendor/firmware/aw8695_rtp.bin
 vendor/firmware/crus_sp_rx0.bin
@@ -42,6 +43,10 @@ vendor/firmware/rcv_fast_switch1.txt
 vendor/firmware/rcv_fast_switch2.txt
 vendor/firmware/spk_fast_switch1.txt
 vendor/firmware/spk_fast_switch2.txt
+
+# Firmware - from sofiar R
+vendor/firmware/aw8624_haptic.bin
+vendor/firmware/aw8624_rtp.bin
 
 # QDCM - from sofia R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_auo_1080p_636.xml

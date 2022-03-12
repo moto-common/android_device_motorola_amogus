@@ -71,9 +71,10 @@ function blob_fixup() {
         patchelf --add-needed libgbp_shim.so "${2}"
         ;;
 
-      system_ext/etc/permissions/moto-telephony.xml)
-           sed -i "s#/system/#/system_ext/#" "${2}"
-           ;;
+    system_ext/etc/permissions/moto-telephony.xml)
+        sed -i "s#/system/#/system_ext/#" "${2}"
+        ;;
+
     esac
 }
 
@@ -83,7 +84,5 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 extract "${MY_DIR}/proprietary-files-rav.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 extract "${MY_DIR}/proprietary-files-sofia.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-extract "${MY_DIR}/proprietary-files-sofiap.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-extract "${MY_DIR}/proprietary-files-sofiar.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"

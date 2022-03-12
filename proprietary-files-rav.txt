@@ -1,4 +1,4 @@
-# Audio-ACDB
+# Audio-ACDB - from rav R
 vendor/etc/acdbdata/na/Bluetooth_cal.acdb:vendor/etc/acdbdata/rav/Bluetooth_cal.acdb
 vendor/etc/acdbdata/na/Codec_cal.acdb:vendor/etc/acdbdata/rav/Codec_cal.acdb
 vendor/etc/acdbdata/na/General_cal.acdb:vendor/etc/acdbdata/rav/General_cal.acdb
@@ -8,16 +8,14 @@ vendor/etc/acdbdata/na/Hdmi_cal.acdb:vendor/etc/acdbdata/rav/Hdmi_cal.acdb
 vendor/etc/acdbdata/na/Headset_cal.acdb:vendor/etc/acdbdata/rav/Headset_cal.acdb
 vendor/etc/acdbdata/na/Speaker_cal.acdb:vendor/etc/acdbdata/rav/Speaker_cal.acdb
 
-# Camera-configs
-vendor/etc/camera/cameraconfig.txt
+# Camera-configs - from rav R
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_rav.xml
 vendor/etc/camera/dual_golden.bin
-vendor/etc/camera/mot_ov02a_chromatix.xml
 vendor/etc/camera/mot_ov16e10_chromatix.xml
 vendor/etc/camera/mot_s5k4h7yx03_chromatix.xml
 vendor/etc/camera/mot_s5k4h7_chromatix.xml
 
-# Firmware
+# Firmware - from rav R
 vendor/firmware/focaltech-boe-ft8009-09-0000-rav.bin
 vendor/firmware/focaltech-boev-ft8009-0e-0000-rav.bin
 vendor/firmware/focaltech-dj-ft8009-0b-0000-rav.bin
@@ -28,14 +26,14 @@ vendor/firmware/inx_hx_criteria.csv
 vendor/firmware/novatek_ts_fw.bin
 vendor/firmware/novatek_ts_mp.bin
 
-# QDCM
+# QDCM - from rav R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_boev_720p_639.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_dj_720p_639.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_inx_720p_639.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_inxr_720p_639.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_tm_720p_639.xml
 
-# Sensor Configs
+# Sensor Configs - from rav R
 vendor/etc/sensors/config/ak991x_polling_0.json:vendor/etc/sensors/config-rav/ak991x_polling_0.json
 vendor/etc/sensors/config/default_sensors.json:vendor/etc/sensors/config-rav/default_sensors.json
 vendor/etc/sensors/config/icm4x6xx_0.json:vendor/etc/sensors/config-rav/icm4x6xx_0.json
@@ -80,5 +78,5 @@ vendor/etc/sensors/config/tsl2540.json:vendor/etc/sensors/config-rav/tsl2540.jso
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 
-# Thermal
+# Thermal - from rav R
 vendor/etc/thermal-engine-rav.conf
