@@ -624,9 +624,8 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so
 vendor/lib64/vendor.qti.hardware.embmssl@1.0.so
 
 # Radio - from 11
-system_ext/framework/qcom-moto-ims-ext.jar|460d562db70ba436659da6e813bba8848b727aa0
-system_ext/framework/qcom-moto-telephony-ext.jar|9f9378285097e7da36444c40d00d022b4653befb
-#system_ext/framework/qti-telephony-common.jar|02ee9c75d651ca1588d56ae6b292ddc1084296f6
+etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
+framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
 -system_ext/priv-app/ims/ims.apk|dc9211bc0b4c14e103109201ffb625ec6240fef8
 
 # Radio
@@ -825,7 +824,13 @@ vendor/radio/qcril_database/upgrade/7_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/8_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
+<<<<<<< HEAD
 # Radio-IMS
+=======
+# Radio IMS
+etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
+framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
+>>>>>>> 069ed8899 (sm4250-common: Move moto-telephony.jar to system_ext and remove unused moto jar)
 -system_ext/app/uceShimService/uceShimService.apk
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml

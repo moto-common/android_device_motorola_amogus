@@ -71,6 +71,9 @@ function blob_fixup() {
         patchelf --add-needed libgbp_shim.so "${2}"
         ;;
 
+      system_ext/etc/permissions/moto-telephony.xml)
+           sed -i "s#/system/#/system_ext/#" "${2}"
+           ;;
     esac
 }
 
