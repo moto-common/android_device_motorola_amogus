@@ -84,11 +84,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 # Dynamic Partitions: Enable DP
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Display
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-TARGET_USES_DRM_PP := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
-
 # A/B support
 AB_OTA_UPDATER := true
 
@@ -193,14 +188,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ueventd
 
-# GFX
-PRODUCT_PACKAGES += \
-    copybit.trinket \
-    gralloc.trinket \
-    hwcomposer.trinket \
-    libdisplayconfig.qti.vendor \
-    memtrack.trinket
-
 # GPS
 PRODUCT_PACKAGES += \
     gps.trinket
@@ -251,34 +238,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.comp_mask=0 \
-    vendor.display.disable_excl_rect=0 \
-    vendor.display.disable_excl_rect_partial_fb=1 \
-    vendor.display.disable_hw_recovery_dump=1 \
-    vendor.display.disable_layer_stitch=0 \
-    vendor.display.disable_rotator_ubwc=1 \
-    vendor.display.disable_scaler=0 \
-    vendor.gralloc.disable_ubwc=0 \
-    vendor.display.enable_posted_start_dyn=1 \
-    vendor.display.enable_optimize_refresh=1 \
-    vendor.display.camera_noc_efficiency_factor=0.70 \
-    vendor.display.normal_noc_efficiency_factor=0.85 \
-    vendor.display.secure_preview_buffer_format=420_sp \
-    vendor.display.use_smooth_motion=1 \
-    vendor.gralloc.secure_preview_buffer_format=420_sp \
     debug.sf.enable_advanced_sf_phase_offset=1 \
     debug.sf.high_fps_late_sf_phase_offset_ns=-5000000 \
     debug.sf.high_fps_early_phase_offset_ns=-5000000 \
     debug.sf.high_fps_early_gl_phase_offset_ns=-5000000
-
-# Display - HDR/WCG
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.has_wide_color_display=true \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # External modem
 PRODUCT_PROPERTY_OVERRIDES += \
