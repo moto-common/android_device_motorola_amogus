@@ -26,8 +26,7 @@ PRODUCT_COPY_FILES := \
 
 # Device DTB/Kernel
 PRODUCT_COPY_FILES += \
-    device/motorola/amogus-kernel/dtb.img:dtb.img \
-    device/motorola/amogus-kernel/Image.gz-dtb:kernel
+    device/motorola/amogus-kernel/Image.gz:kernel
 
 # Device Init
 PRODUCT_PACKAGES += \

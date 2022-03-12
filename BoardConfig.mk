@@ -38,9 +38,12 @@ BOARD_DTB_OFFSET         := 0x01f00000
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 
+# DTB
+BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/amogus-kernel/dtb
+
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES += \
-    $(wildcard device/motorola/amogus-kernel/*.ko)
+    $(wildcard device/motorola/amogus-kernel/modules/*.ko)
 
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/rootdir/recovery.wipe
 TARGET_RECOVERY_FSTAB ?= $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
