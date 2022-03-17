@@ -144,6 +144,14 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/default_volume_tables.xml \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/mixer_paths_moto_rav.xml
 
+# Audio - TAS2562 (SOFIAR)
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_platform_info_moto_sofiar.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/default_volume_tables.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/mixer_paths_moto_sofiar.xml
+
 # Audio - Cirrus (SOFIA)
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/audio_platform_info_moto_sofia.xml \
