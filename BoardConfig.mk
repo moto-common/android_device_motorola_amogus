@@ -104,4 +104,7 @@ BOARD_AVB_ENABLE := true
 # DTBO partition definitions
 TARGET_NEEDS_DTBOIMAGE ?= true
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/class/sensors/dt-gesture/enable"
+
 include device/motorola/common/CommonConfig.mk
