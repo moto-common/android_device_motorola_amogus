@@ -66,6 +66,12 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+    # camera shim
+    vendor/lib/hw/camera.trinket.so)
+        patchelf --add-needed libcamera_shim.so "${2}"
+        sed -i 's/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchdogEv/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchhogEv/g' "${2}"
+        ;;
+
     # gbp shim
     vendor/lib/libmot_gpu_mapper.so)
         patchelf --add-needed libgbp_shim.so "${2}"

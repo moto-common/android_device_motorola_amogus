@@ -283,6 +283,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera Requirements
 PRODUCT_PACKAGES += \
+    libcamera_shim \
     libgbp_shim \
     libgui_vendor
 
