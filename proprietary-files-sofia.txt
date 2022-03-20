@@ -110,3 +110,17 @@ vendor/etc/sensors/config/sns_tilt_sw_disabled.json:vendor/etc/sensors/config-so
 vendor/etc/sensors/config/sns_tilt_sw_enabled.json:vendor/etc/sensors/config-sofia/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/vcnl36866_0.json:vendor/etc/sensors/config-sofia/vcnl36866_0.json
 
+# Sensor Configs - from sofiar R
+vendor/etc/sensors/config/mn29xxx_0.json:vendor/etc/sensors/config-sofiar/mn29xxx_0.json
+vendor/etc/sensors/config/mn59xxx_0.json:vendor/etc/sensors/config-sofiar/mn59xxx_0.json
+vendor/etc/sensors/config/nicobar_ak991x_0.json:vendor/etc/sensors/config-sofiar/nicobar_ak991x_0.json
+vendor/etc/sensors/config/nicobar_icm4x6xx_0-i3c.json:vendor/etc/sensors/config-sofiar/nicobar_icm4x6xx_0-i3c.json
+vendor/etc/sensors/config/nicobar_lsm6dso_0.json:vendor/etc/sensors/config-sofiar/nicobar_lsm6dso_0.json
+vendor/etc/sensors/config/nicobar_mn29xxx_0.json:vendor/etc/sensors/config-sofiar/nicobar_mn29xxx_0.json
+vendor/etc/sensors/config/nicobar_mn59xxx_0.json:vendor/etc/sensors/config-sofiar/nicobar_mn59xxx_0.json
+vendor/etc/sensors/config/sns_tilt_to_wake.json:vendor/etc/sensors/config-sofiar/sns_tilt_to_wake.json
+vendor/etc/sensors/config/sns_wrist_pedo.json:vendor/etc/sensors/config-sofiar/sns_wrist_pedo.json
+vendor/etc/sensors/config/tmd2725.json:vendor/etc/sensors/config-sofiar/tmd2725.json
+vendor/etc/sensors/config/tmd2750.json:vendor/etc/sensors/config-sofiar/tmd2750.json
+vendor/etc/sensors/config/tmx4903.json:vendor/etc/sensors/config-sofiar/tmx4903.json
+vendor/etc/sensors/config/tsl2540.json:vendor/etc/sensors/config-sofiar/tsl2540.json

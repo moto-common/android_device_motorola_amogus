@@ -1,67 +1,47 @@
 #!/vendor/bin/sh
 device=`getprop ro.boot.device`
 
-rav()
-{
-    setprop ro.boot.product.vendor.sku rav
-    setprop ro.sf.lcd_density 280
-    mount -o bind /vendor/etc/sensors/config-rav /vendor/etc/sensors/config
-    setprop persist.vendor.camera.customer.config camera_config_rav.xml
-}
-sofia()
-{
-    setprop ro.boot.product.vendor.sku sofia
-    setprop ro.sf.lcd_density 380
-    setprop persist.vendor.camera.customer.config camera_config_sofia.xml
-    mount -o bind /vendor/etc/sensors/config-sofia /vendor/etc/sensors/config
-    mount -o bind /vendor/etc/camera/dual_golden_sofia.bin /vendor/etc/camera/dual_golden.bin
-    mount -o bind /vendor/lib/libmmcamera_mot_ov02a_sofia.so /vendor/lib/libmmcamera_mot_ov02a.so
-    moutn -o bind /vendor/lib/libmmcamera_mot_s5k4h7_sofia.so /vendor/lib/libmmcamera_mot_s5k4h7.so
-}
-sofiap()
-{
-    setprop persist.vendor.camera.customer.config camera_config_sofiap.xml
-}
-sofiar()
-{
-    setprop ro.boot.product.vendor.sku sofiar
-    mount -o bind /vendor/etc/camera/dual_golden_sofiar.bin /vendor/etc/camera/dual_golden.bin
-    setprop persist.vendor.camera.customer.config camera_config_sofiar.xml
-}
-
-case "$device" in
-    "rav")
-    rav
-    ;;
-    "sofia")
-    sofia
-    ;;
-    "sofiap")
-    sofia
-    sofiap
-    ;;
-    "sofiap_sprout")
-    sofia
-    sofiap
-    ;;
-    "sofiar")
-    sofia
-    sofiar
-    ;;
-esac
-
 # Audio
-setprop persist.vendor.audio.calfile0 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Bluetooth_cal.acdb
-setprop persist.vendor.audio.calfile1 /vendor/etc/acdbdata/$(getprop ro.boot.device)/General_cal.acdb
-setprop persist.vendor.audio.calfile2 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Global_cal.acdb
-setprop persist.vendor.audio.calfile3 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Handset_cal.acdb
-setprop persist.vendor.audio.calfile4 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Hdmi_cal.acdb
-setprop persist.vendor.audio.calfile5 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Headset_cal.acdb
-setprop persist.vendor.audio.calfile6 /vendor/etc/acdbdata/$(getprop ro.boot.device)/Speaker_cal.acdb
+setprop persist.vendor.audio.calfile0 /vendor/etc/acdbdata/$device/Bluetooth_cal.acdb
+setprop persist.vendor.audio.calfile1 /vendor/etc/acdbdata/$device/General_cal.acdb
+setprop persist.vendor.audio.calfile2 /vendor/etc/acdbdata/$device/Global_cal.acdb
+setprop persist.vendor.audio.calfile3 /vendor/etc/acdbdata/$device/Handset_cal.acdb
+setprop persist.vendor.audio.calfile4 /vendor/etc/acdbdata/$device/Hdmi_cal.acdb
+setprop persist.vendor.audio.calfile5 /vendor/etc/acdbdata/$device/Headset_cal.acdb
+setprop persist.vendor.audio.calfile6 /vendor/etc/acdbdata/$device/Speaker_cal.acdb
+setprop ro.boot.product.vendor.sku $device
+
+# Camera
+setprop persist.vendor.camera.customer.config camera_config_$device.xml
+if [ $device == "sofia" ] || [ $device == "sofiar" ];
+then
+   mount -o bind /vendor/etc/camera/dual_golden_$device.bin /vendor/etc/camera/dual_golden.bin
+fi
+
+# Density
+if [ $device == "rav" ];
+then
+   setprop ro.sf.lcd_density 280
+else
+   setprop ro.sf.lcd_density 380
+fi
 
 # DualSim
-
 if [ $(getprop ro.boot.dualsim) == "true" ];
 then
-  setprop persist.radio.multisim.config dsds
+   setprop persist.radio.multisim.config dsds
+fi
+
+# Sensors
+if [ $device == "sofia" ] || [ $device == "sofiar" ];
+then
+   mount -o bind /vendor/etc/sensors/config-sofia /vendor/etc/sensors/config
+fi
+if [ $device == "sofiar" ];
+then
+   mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_ak991x_0.json /vendor/etc/sensors/config/nicobar_ak991x_0.json
+   mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_icm4x6xx_0-i3c.json /vendor/etc/sensors/config/nicobar_icm4x6xx_0-i3c.json
+   mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_lsm6dso_0.json /vendor/etc/sensors/config/nicobar_lsm6dso_0.json
+   mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_mn29xxx_0.json /vendor/etc/sensors/config/nicobar_mn29xxx_0.json
+   mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_mn59xxx_0.json /vendor/etc/sensors/config/nicobar_mn59xxx_0.json
 fi
