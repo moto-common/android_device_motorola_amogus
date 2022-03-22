@@ -24,6 +24,8 @@ vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofia.xml
 # Camera - from sofiar R
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiar.xml
 vendor/etc/camera/dual_golden.bin:vendor/etc/camera/dual_golden_sofiar.bin
+vendor/etc/camera/mot_ov16e10_sofiarow_chromatix.xml
+vendor/etc/camera/mot_ov8856_chromatix.xml
 
 # Camera - from sofiap_ao S
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiap.xml
