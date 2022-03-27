@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_amogus.mk
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aosp_amogus.mk \
+    $(LOCAL_DIR)/hentai_amogus.mk
 
 COMMON_LUNCH_CHOICES += \
     aosp_amogus-eng \
