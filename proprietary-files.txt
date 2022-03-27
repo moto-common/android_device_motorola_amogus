@@ -591,6 +591,11 @@ vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libVkLayer_q3dtools.so
 
+# Moto Camera
+product/etc/permissions/com.motorola.camera2.logan.xml
+product/etc/permissions/privapp-permissions-com.motorola.camera2.xml
+-product/priv-app/MotCamera2/MotCamera2.apk|d26ea1335a0fad1afef850785c972fc6a9d500d9
+
 # Peripheral
 vendor/bin/pm-proxy
 vendor/bin/pm-service

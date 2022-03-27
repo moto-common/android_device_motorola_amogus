@@ -18,6 +18,7 @@ fi
 
 # Camera
 setprop persist.vendor.camera.customer.config camera_config_$device.xml
+setprop ro.product.bevice "$device"
 if [ $device == "sofia" ] || [ $device == "sofiar" ];
 then
    mount -o bind /vendor/etc/camera/dual_golden_$device.bin /vendor/etc/camera/dual_golden.bin
