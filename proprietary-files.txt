@@ -649,7 +649,7 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.0.so
 # Radio - from 11
 etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
 framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
--system_ext/priv-app/ims/ims.apk|1e59e5c1ec10ff6e21eb9ba512f6e254d792d657
+-system_ext/priv-app/ims/ims.apk|95051a45d323ff6ca81870f0e28d5d66cc90d08d
 
 # Radio
 -system_ext/app/atfwd/atfwd.apk
