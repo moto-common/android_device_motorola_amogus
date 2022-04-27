@@ -39,7 +39,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 
 # DTB
-BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/amogus-kernel/dtb
+BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/amogus-kernel/dtbs
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES += \
