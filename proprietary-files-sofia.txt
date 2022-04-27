@@ -18,6 +18,16 @@ vendor/etc/acdbdata/Hdmi_cal.acdb:vendor/etc/acdbdata/sofiar/Hdmi_cal.acdb
 vendor/etc/acdbdata/Headset_cal.acdb:vendor/etc/acdbdata/sofiar/Headset_cal.acdb
 vendor/etc/acdbdata/Speaker_cal.acdb:vendor/etc/acdbdata/sofiar/Speaker_cal.acdb
 
+# Audio ACDB - from sofiap_ao S
+vendor/etc/acdbdata/Bluetooth_cal.acdb:vendor/etc/acdbdata/sofiap/Bluetooth_cal.acdb
+vendor/etc/acdbdata/Codec_cal.acdb:vendor/etc/acdbdata/sofiap/Codec_cal.acdb
+vendor/etc/acdbdata/General_cal.acdb:vendor/etc/acdbdata/sofiap/General_cal.acdb
+vendor/etc/acdbdata/Global_cal.acdb:vendor/etc/acdbdata/sofiap/Global_cal.acdb
+vendor/etc/acdbdata/Handset_cal.acdb:vendor/etc/acdbdata/sofiap/Handset_cal.acdb
+vendor/etc/acdbdata/Hdmi_cal.acdb:vendor/etc/acdbdata/sofiap/Hdmi_cal.acdb
+vendor/etc/acdbdata/Headset_cal.acdb:vendor/etc/acdbdata/sofiap/Headset_cal.acdb
+vendor/etc/acdbdata/Speaker_cal.acdb:vendor/etc/acdbdata/sofiap/Speaker_cal.acdb
+
 # Camera - from sofia R
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofia.xml
 
