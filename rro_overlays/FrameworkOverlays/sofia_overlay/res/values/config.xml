@@ -9,5 +9,6 @@
     <string name="config_mms_user_agent">motogpower</string>
     <string name="wifi_tether_configure_ssid_default">moto g power</string>
     <dimen name="rounded_corner_radius">95px</dimen>
-
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 </resources>
