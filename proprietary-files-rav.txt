@@ -8,6 +8,10 @@ vendor/etc/acdbdata/na/Hdmi_cal.acdb:vendor/etc/acdbdata/rav/Hdmi_cal.acdb
 vendor/etc/acdbdata/na/Headset_cal.acdb:vendor/etc/acdbdata/rav/Headset_cal.acdb
 vendor/etc/acdbdata/na/Speaker_cal.acdb:vendor/etc/acdbdata/rav/Speaker_cal.acdb
 
+# Audio-ADSP - from rav R
+vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
+vendor/lib/rfsa/adsp/tas25xx_TI_1.bin
+
 # Camera-configs - from rav R
 vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_rav.xml
 vendor/etc/camera/dual_golden.bin
