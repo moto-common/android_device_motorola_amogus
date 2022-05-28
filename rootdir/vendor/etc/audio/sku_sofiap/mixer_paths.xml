@@ -410,7 +410,7 @@
 	</path>
 
 	<path name="echo-reference">
-		<ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="PRI_MI2S_TX" />
 		<ctl name="EC Reference Channels" value="Two"/>
 	</path>
 
@@ -431,7 +431,7 @@
 	</path>
 
 	<path name="echo-reference-voip">
-		<ctl name="AUDIO_REF_EC_UL1 MUX" value="RX_CDC_DMA_RX_0" />
+		<ctl name="AUDIO_REF_EC_UL1 MUX" value="PRI_MI2S_TX" />
 		<ctl name="EC Reference Channels" value="Two"/>
 	</path>
 
@@ -660,6 +660,76 @@
 		<ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode2" value="1" />
 		<ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="1" />
 	</path>
+
+    <!-- VoIP Rx settings -->
+    <path name="audio-playback-voip">
+        <ctl name="WSA_CDC_DMA_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip handset">
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip headphones">
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip bt-sco">
+        <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
+        <path name="audio-playback-voip bt-sco" />
+    </path>
+
+    <path name="audio-playback-voip bt-a2dp">
+        <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip afe-proxy">
+        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip usb-headphones">
+        <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip usb-headset">
+        <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip display-port">
+        <ctl name="DISPLAY_PORT Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="audio-playback-voip speaker-and-display-port">
+        <path name="audio-playback-voip display-port" />
+        <path name="audio-playback-voip" />
+    </path>
+
+    <path name="audio-playback-voip speaker-safe-and-display-port">
+        <path name="audio-playback-voip display-port" />
+        <path name="audio-playback-voip" />
+    </path>
+
+    <!-- VoIP Tx settings -->
+    <path name="audio-record-voip">
+        <ctl name="MultiMedia10 Mixer TX_CDC_DMA_TX_3" value="1" />
+    </path>
+
+    <path name="audio-record-voip usb-headset-mic">
+        <ctl name="MultiMedia10 Mixer USB_AUDIO_TX" value="1" />
+    </path>
+
+    <path name="audio-record-voip bt-sco">
+        <ctl name="MultiMedia10 Mixer SLIM_7_TX" value="1" />
+    </path>
+
+    <path name="audio-record-voip bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
+        <path name="audio-record-voip bt-sco" />
+    </path>
 
 	<!-- A2DP -->
 	<path name="deep-buffer-playback bt-a2dp">
