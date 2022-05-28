@@ -9,12 +9,7 @@ setprop persist.vendor.audio.calfile3 /vendor/etc/acdbdata/$device/Handset_cal.a
 setprop persist.vendor.audio.calfile4 /vendor/etc/acdbdata/$device/Hdmi_cal.acdb
 setprop persist.vendor.audio.calfile5 /vendor/etc/acdbdata/$device/Headset_cal.acdb
 setprop persist.vendor.audio.calfile6 /vendor/etc/acdbdata/$device/Speaker_cal.acdb
-if [ $device == "sofiap" ];
-then
-   setprop ro.boot.product.vendor.sku sofia
-else
-   setprop ro.boot.product.vendor.sku $device
-fi
+setprop ro.boot.product.vendor.sku $device
 
 # Camera
 setprop persist.vendor.camera.customer.config camera_config_$device.xml
@@ -38,7 +33,7 @@ then
 fi
 
 # Sensors
-if [ $device == "sofia" ] || [ $device == "sofiar" ];
+if [ $device == "sofia" ] || [ $device == "sofiar" ] || [ $deivce == "sofiap" ];
 then
    mount -o bind /vendor/etc/sensors/config-sofia /vendor/etc/sensors/config
 fi

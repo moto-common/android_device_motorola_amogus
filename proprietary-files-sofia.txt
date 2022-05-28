@@ -45,6 +45,12 @@ vendor/etc/qdcm_calib_data_mipi_mot_vid_auo_1080p_636.xml
 vendor/etc/qdcm_calib_data_mipi_mot_vid_tianma_1080p_636.xml
 
 # Firmware - from sofia R
+vendor/firmware/focaltech-auo-ft8756-0b-01-sofiap.bin
+vendor/firmware/focaltech-ft8756-0e-01-sofiar.bin
+vendor/firmware/focaltech-tianma-ft8756-0c-01-sofia.bin
+vendor/firmware/focaltech-tianma-ft8756-11-01-sofiap.bin
+
+# Firmware Cirrus - from sofiap_ao S
 vendor/firmware/aw8695_haptic.bin
 vendor/firmware/aw8695_rtp.bin
 vendor/firmware/crus_sp_rx0.bin
@@ -57,10 +63,6 @@ vendor/firmware/cs35l41-dsp1-rcv-cali.bin
 vendor/firmware/cs35l41-dsp1-rcv-prot.bin
 vendor/firmware/cs35l41-dsp1-spk-cali.bin
 vendor/firmware/cs35l41-dsp1-spk-prot.bin
-vendor/firmware/focaltech-auo-ft8756-0b-01-sofiap.bin
-vendor/firmware/focaltech-ft8756-0e-01-sofiar.bin
-vendor/firmware/focaltech-tianma-ft8756-0c-01-sofia.bin
-vendor/firmware/focaltech-tianma-ft8756-11-01-sofiap.bin
 vendor/firmware/rcv_fast_switch1.txt
 vendor/firmware/rcv_fast_switch2.txt
 vendor/firmware/spk_fast_switch1.txt

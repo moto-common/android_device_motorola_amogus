@@ -144,6 +144,14 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/default_volume_tables.xml \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_rav/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/mixer_paths_moto_rav.xml
 
+# Audio - Cirrus (SOFIAP)
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_platform_info_moto_sofiap.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_policy_configuration.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_policy_volumes.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiap/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/default_volume_tables.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiap/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/mixer_paths_moto_sofiap.xml
+
 # Audio - TAS2562 (SOFIAR)
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_platform_info_moto_sofiar.xml \
@@ -229,15 +237,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Legacy BT property (will be removed in S)
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee
-
-# Audio - QCOM HAL
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.feature.concurrent_capture.enable=true \
-    vendor.audio.feature.compress_in.enable=true
-
-# Audio - QCOM proprietary
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.adm.buffering.ms=2
 
 # USB controller setup
 PRODUCT_PROPERTY_OVERRIDES += \
