@@ -956,8 +956,21 @@
 		<ctl name="RX_EAR Mode" value="ON" />
 	</path>
 
+        <!-- Dual MIC devices -->
+        <!-- Ch1: 1st mic DEC1/TX1, Ch2: 2nd mic DEC2/TX2 -->
+        <!-- Phone SPK TX 2nd:DEC1 16dB, 1st:DEC2 16dB,-->
 	<path name="handset-mic">
-		<path name="mic2" />
+		<ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+		<ctl name="TX DEC0 MUX" value="SWR_MIC" />
+		<ctl name="TX SMIC MUX0" value="ADC2" />
+		<ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
+		<ctl name="ADC2_MIXER Switch" value="1" />
+		<ctl name="ADC2 MUX" value="INP3" />
+		<ctl name="TX DEC1 MUX" value="SWR_MIC" />
+		<ctl name="TX SMIC MUX1" value="ADC0" />
+		<ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+		<ctl name="ADC1_MIXER Switch" value="1" />
+		<ctl name="ADC1 Volume" value="8" />
 		<ctl name="ADC2 Volume" value="8" />
 	</path>
 
@@ -1276,3 +1289,4 @@
 	</path>
 	<!-- USB devices end -->
 </mixer>
+
