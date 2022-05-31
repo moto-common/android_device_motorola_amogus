@@ -138,3 +138,12 @@ vendor/etc/sensors/config/tmd2725.json:vendor/etc/sensors/config-sofiar/tmd2725.
 vendor/etc/sensors/config/tmd2750.json:vendor/etc/sensors/config-sofiar/tmd2750.json
 vendor/etc/sensors/config/tmx4903.json:vendor/etc/sensors/config-sofiar/tmx4903.json
 vendor/etc/sensors/config/tsl2540.json:vendor/etc/sensors/config-sofiar/tsl2540.json
+
+# Thermal - from sofia R
+vendor/etc/thermal-engine-sofia.conf
+
+# Thermal - from sofiap R
+vendor/etc/thermal-engine-sofiap.conf
+
+# Thermal - from sofiar R
+vendor/etc/thermal-engine-sofiar.conf
