@@ -142,7 +142,7 @@ vendor/etc/sensors/config/tsl2540.json:vendor/etc/sensors/config-sofiar/tsl2540.
 # Thermal - from sofia R
 vendor/etc/thermal-engine-sofia.conf
 
-# Thermal - from sofiap R
+# Thermal - from sofiap_ao S
 vendor/etc/thermal-engine-sofiap.conf
 
 # Thermal - from sofiar R
