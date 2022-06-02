@@ -45,8 +45,8 @@ BOARD_PREBUILT_DTBIMAGE_DIR := device/motorola/amogus-kernel/dtbs
 BOARD_VENDOR_KERNEL_MODULES += \
     $(wildcard device/motorola/amogus-kernel/modules/*.ko)
 
-TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/rootdir/recovery.wipe
-TARGET_RECOVERY_FSTAB ?= $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy_platform
@@ -61,14 +61,10 @@ BOARD_PREBUILT_DTBOIMAGE := device/motorola/amogus-kernel/dtbo.img
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_JOURNAL_SIZE := 0
-BOARD_VENDORIMAGE_EXTFS_INODE_COUNT := 4096
 
 # Build product image
 TARGET_COPY_OUT_PRODUCT := product
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PRODUCTIMAGE_JOURNAL_SIZE := 0
-BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := 4096
 
 # Partition information
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -89,20 +85,12 @@ BOARD_MOT_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     product \
     vendor
 
-# Slightly overprovision dynamic partitions with 50MiB to
-# allow on-device file editing
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 52428800
-BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 52428800
-
 # This platform has a metadata partition: declare this
 # to create a mount point for it
 BOARD_USES_METADATA_PARTITION := true
 
 # AVB
 BOARD_AVB_ENABLE := true
-
-# DTBO partition definitions
-TARGET_NEEDS_DTBOIMAGE ?= true
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/class/sensors/dt-gesture/enable"
