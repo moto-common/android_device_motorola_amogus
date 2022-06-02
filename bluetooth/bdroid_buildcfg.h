@@ -33,22 +33,26 @@ static inline const char* getBTDefaultName()
     property_get("ro.boot.device", device, "");
 
     if (!strcmp("rav", device)) {
-        return "Moto G8";
+        return "moto g8";
+    }
+
+    if (!strcmp("rav_t", device)) {
+        return "moto g fast";
     }
 
     if (!strcmp("sofia", device)) {
-        return "Moto G Power (2020)";
+        return "moto g power (2020)";
     }
 
     if (!strcmp("sofiar", device)) {
-        return "Moto G8 Power";
+        return "moto g8 power";
     }
 
     if (!strcmp("sofiap", device)) {
-        return "Moto G Stylus";
+        return "moto g stylus (2020)";
     }
 
-    return "Moto G";
+    return "Moto G8 Family";
 }
 
 #define BTM_DEF_LOCAL_NAME getBTDefaultName()

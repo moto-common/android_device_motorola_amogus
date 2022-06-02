@@ -41,7 +41,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 PRODUCT_NAME := hentai_amogus
 PRODUCT_DEVICE := amogus
-PRODUCT_MODEL := Moto G(8) Family (AOSP)
+PRODUCT_MODEL := Moto G(8) Family (hOS)
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_SHIPPING_API_LEVEL := 29
