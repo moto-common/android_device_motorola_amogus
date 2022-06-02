@@ -9,5 +9,6 @@
     <dimen name="quick_qs_offset_height">78.0px</dimen>
     <dimen name="status_bar_height">78.0px</dimen>
     <dimen name="status_bar_height_portrait">78.0px</dimen>
-
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 </resources>
