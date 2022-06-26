@@ -32,6 +32,7 @@
 /******************************************************************************
  * INCLUDE SECTION
  ******************************************************************************/
+#include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
 #include <errno.h>
@@ -42,6 +43,7 @@
 #include <limits.h>
 #include <dirent.h>
 #include <linux/kernel.h>
+#include <asm/byteorder.h>
 #include <map>
 #include <vector>
 #include <string>
@@ -678,12 +680,6 @@ int gpt_utils_set_xbl_boot_partition(enum boot_chain chain)
                                 sg_dev_node,
                                 sizeof(sg_dev_node))) {
                 fprintf(stderr, "%s: Failed to get scsi node path for xblbak\n",
-                                __func__);
-                goto error;
-        }
-        /* set boot lun using /dev/sg or /dev/ufs-bsg* */
-        if (set_boot_lun(sg_dev_node, boot_lun_id)) {
-                fprintf(stderr, "%s: Failed to set xblbak as boot partition\n",
                                 __func__);
                 goto error;
         }
@@ -1478,7 +1474,7 @@ int gpt_disk_commit(struct gpt_disk *disk)
                 ALOGE("%s: Invalid args", __func__);
                 goto error;
         }
-        fd = open(disk->devpath, O_RDWR);
+        fd = open(disk->devpath, O_RDWR | O_DSYNC);
         if (fd < 0) {
                 ALOGE("%s: Failed to open %s: %s",
                                 __func__,
@@ -1510,6 +1506,7 @@ int gpt_disk_commit(struct gpt_disk *disk)
                                 __func__);
                 goto error;
         }
+        fsync(fd);
         close(fd);
         return 0;
 error:

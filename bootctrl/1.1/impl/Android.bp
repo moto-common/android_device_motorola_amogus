@@ -1,18 +1,13 @@
-filegroup {
-    name: "android.hardware.boot@1.1-impl-qti_src",
-    srcs: ["BootControl.cpp"],
-}
-
-cc_defaults {
-    name: "android.hardware.boot@1.1-impl-qti_defaults",
+cc_library_shared {
+    name: "android.hardware.boot@1.1-impl-qti",
+    stem: "android.hardware.boot@1.0-impl-1.1-qti",
     defaults: [
         "hidl_defaults",
-        "libboot_control_qti_defaults",
     ],
     relative_install_path: "hw",
     vendor: true,
     recovery_available: true,
-    srcs: [":android.hardware.boot@1.1-impl-qti_src"],
+    srcs: ["BootControl.cpp"],
     shared_libs: [
         "liblog",
         "libhidlbase",
@@ -20,5 +15,6 @@ cc_defaults {
         "libutils",
         "android.hardware.boot@1.0",
         "android.hardware.boot@1.1",
+        "libboot_control_qti",
     ],
 }

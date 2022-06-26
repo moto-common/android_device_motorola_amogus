@@ -1,0 +1,16 @@
+# Audio
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/sofiar/Bluetooth_cal.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/sofiar/General_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/sofiar/Global_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/sofiar/Handset_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/sofiar/Hdmi_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/sofiar/Headset_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/sofiar/Speaker_cal.acdb
+ro.boot.product.vendor.sku=sofiar
+
+# Camera
+persist.vendor.camera.customer.config=camera_config_sofiar.xml
+ro.product.bevice=sofiar
+
+# Density
+ro.sf.lcd_density=420

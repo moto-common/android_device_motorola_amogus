@@ -1,0 +1,7 @@
+# Device mask
+ro.build.fingerprint=google/redfin/redfin:12/SQ3A.220605.009.A1/8643238:user/release-keys
+ro.product.brand=google
+ro.product.device=redfin
+ro.product.manufacturer=Google
+ro.product.model=Pixel 5
+ro.product.name=redfin

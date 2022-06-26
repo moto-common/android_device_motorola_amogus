@@ -514,8 +514,6 @@ vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
 vendor/bin/hw/egis_ident
 vendor/bin/hw/fpc_ident
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc
 vendor/etc/init/init.ets.rc
 vendor/lib/libets_fp_et5.so
 vendor/lib/libets_teeclient.so

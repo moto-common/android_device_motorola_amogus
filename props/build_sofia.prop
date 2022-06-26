@@ -1,0 +1,16 @@
+# Audio
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/sofia/Bluetooth_cal.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/sofia/General_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/sofia/Global_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/sofia/Handset_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/sofia/Hdmi_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/sofia/Headset_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/sofia/Speaker_cal.acdb
+ro.boot.product.vendor.sku=sofia
+
+# Camera
+persist.vendor.camera.customer.config=camera_config_sofia.xml
+ro.product.bevice=sofia
+
+# Density
+ro.sf.lcd_density=420

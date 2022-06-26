@@ -46,3 +46,7 @@ service vendor.amogus /vendor/bin/init.amogus.sh
     user root
     oneshot
     disabled
+
+# DualSIM
+on property:ro.boot.dualsim=true
+    setprop persist.radio.multisim.config dsds

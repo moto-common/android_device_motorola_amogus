@@ -27,6 +27,9 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+//#define LOG_NDEBUG 0
+#define LOG_TAG "bootcontrolhal"
+
 #include <libboot_control_qti.h>
 
 #include <map>
@@ -34,7 +37,6 @@
 #include <string>
 #include <vector>
 #include <errno.h>
-#define LOG_TAG "bootcontrolhal"
 #include <cutils/log.h>
 #include <stdio.h>
 #include <string.h>
@@ -46,12 +48,15 @@
 #include <limits.h>
 #include <cutils/properties.h>
 #include <gpt-utils.h>
+#include <bootloader_message/bootloader_message.h>
 #include <libboot_control/libboot_control.h>
 
 #define BOOTDEV_DIR "/dev/block/bootdevice/by-name"
 #define BOOT_IMG_PTN_NAME "boot"
 #define LUN_NAME_END_LOC 14
 #define BOOT_SLOT_PROP "ro.boot.slot_suffix"
+#define BOARD_PLATFORM_PROP  "ro.build.product"
+#define GVMQ_PLATFORM        "msmnile_gvmq"
 
 #define SLOT_ACTIVE 1
 #define SLOT_INACTIVE 2
@@ -285,8 +290,7 @@ static int boot_ctl_set_active_slot_for_partitions(vector<string> part_list,
 		unsigned slot)
 {
 	char buf[PATH_MAX] = {0};
-	struct gpt_disk *diskA = NULL;
-	struct gpt_disk *diskB = NULL;
+	struct gpt_disk *disk = NULL;
 	char slotA[MAX_GPT_NAME_SIZE + 1] = {0};
 	char slotB[MAX_GPT_NAME_SIZE + 1] = {0};
 	char active_guid[TYPE_GUID_SIZE + 1] = {0};
@@ -324,28 +328,24 @@ static int boot_ctl_set_active_slot_for_partitions(vector<string> part_list,
 		if (stat(buf, &st))
 			continue;
 		memset(slotA, 0, sizeof(slotA));
-		memset(slotB, 0, sizeof(slotB));
+		memset(slotB, 0, sizeof(slotA));
 		snprintf(slotA, sizeof(slotA) - 1, "%s%s", prefix.c_str(),
 				AB_SLOT_A_SUFFIX);
 		snprintf(slotB, sizeof(slotB) - 1,"%s%s", prefix.c_str(),
 				AB_SLOT_B_SUFFIX);
-		//Get the disks containing the partitions that were passed in.
-		if (!diskA) {
-			diskA = boot_ctl_get_disk_info(slotA);
-			if (!diskA)
-				goto error;
-		}
-		if (!diskB) {
-			diskB = boot_ctl_get_disk_info(slotB);
-			if (!diskB)
+		//Get the disk containing the partitions that were passed in.
+		//All partitions passed in must lie on the same disk.
+		if (!disk) {
+			disk = boot_ctl_get_disk_info(slotA);
+			if (!disk)
 				goto error;
 		}
 		//Get partition entry for slot A & B from the primary
 		//and backup tables.
-		pentryA = gpt_disk_get_pentry(diskA, slotA, PRIMARY_GPT);
-		pentryA_bak = gpt_disk_get_pentry(diskA, slotA, SECONDARY_GPT);
-		pentryB = gpt_disk_get_pentry(diskB, slotB, PRIMARY_GPT);
-		pentryB_bak = gpt_disk_get_pentry(diskB, slotB, SECONDARY_GPT);
+		pentryA = gpt_disk_get_pentry(disk, slotA, PRIMARY_GPT);
+		pentryA_bak = gpt_disk_get_pentry(disk, slotA, SECONDARY_GPT);
+		pentryB = gpt_disk_get_pentry(disk, slotB, PRIMARY_GPT);
+		pentryB_bak = gpt_disk_get_pentry(disk, slotB, SECONDARY_GPT);
 		if ( !pentryA || !pentryA_bak || !pentryB || !pentryB_bak) {
 			//None of these should be NULL since we have already
 			//checked for A & B versions earlier.
@@ -398,16 +398,8 @@ static int boot_ctl_set_active_slot_for_partitions(vector<string> part_list,
 			ALOGE("%s: Unknown slot suffix!", __func__);
 			goto error;
 		}
-
-		if (diskA) {
-			if (gpt_disk_update_crc(diskA) != 0) {
-				ALOGE("%s: Failed to update gpt_disk crc",
-						__func__);
-				goto error;
-			}
-		}
-		if (diskB) {
-			if (gpt_disk_update_crc(diskB) != 0) {
+		if (disk) {
+			if (gpt_disk_update_crc(disk) != 0) {
 				ALOGE("%s: Failed to update gpt_disk crc",
 						__func__);
 				goto error;
@@ -415,37 +407,35 @@ static int boot_ctl_set_active_slot_for_partitions(vector<string> part_list,
 		}
 	}
 	//write updated content to disk
-	if (diskA) {
-		if (gpt_disk_commit(diskA)) {
+	if (disk) {
+		if (gpt_disk_commit(disk)) {
 			ALOGE("Failed to commit disk entry");
 			goto error;
 		}
-		gpt_disk_free(diskA);
-	}
-	if (diskB) {
-		if (gpt_disk_commit(diskB)) {
-			ALOGE("Failed to commit disk entry");
-			goto error;
-		}
-		gpt_disk_free(diskB);
+		gpt_disk_free(disk);
 	}
 	return 0;
 
 error:
-	if (diskA)
-		gpt_disk_free(diskA);
-	if (diskB)
-		gpt_disk_free(diskB);
+	if (disk)
+		gpt_disk_free(disk);
 	return -1;
 }
 
 bool bootcontrol_init()
 {
+	char platform[256];
+	property_get(BOARD_PLATFORM_PROP , platform, "");
+	if (!strncmp(platform, GVMQ_PLATFORM, strlen(GVMQ_PLATFORM)))
+		mGvmqPlatform = true;
 	return InitMiscVirtualAbMessageIfNeeded();
 }
 
 unsigned get_number_slots()
 {
+	if (mGvmqPlatform)
+		return 2;
+
 	struct dirent *de = NULL;
 	DIR *dir_bootdev = NULL;
 	unsigned slot_count = 0;
@@ -502,8 +492,35 @@ error:
 	return 0;
 }
 
-int mark_boot_successful()
-{
+int mark_boot_successful(){
+	if (mGvmqPlatform) {
+		std::string err;
+		std::string misc_blk_device = get_bootloader_message_blk_device(&err);
+		if (misc_blk_device.empty()) {
+			ALOGE("Could not find bootloader message block device: %s", err.c_str());
+			return -1;
+		}
+		bootloader_message boot;
+		if (!read_bootloader_message_from(&boot, misc_blk_device, &err)) {
+			ALOGE(" Failed to read from %s due to %s ", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		ALOGV(" bootloader_message is : boot.reserved[0] = %c, boot.reserved[1] = %c",
+					boot.reserved[0], boot.reserved[1]);
+		boot.reserved[2] = 'y';
+		if (!write_bootloader_message_to(boot, misc_blk_device, &err)) {
+			ALOGE("Failed to write to %s  because : %s", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		bootloader_message boot_verify;
+		if (!read_bootloader_message_from(&boot_verify, misc_blk_device, &err)) {
+			ALOGE("Failed to read from %s due to %s ", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		ALOGV(" bootloader_message : boot_verify.reserved[0] = %c, boot_verify.reserved[1] = %c,boot_verify.reserved[2] = %c",
+				boot_verify.reserved[0],boot_verify.reserved[1], boot_verify.reserved[2]);
+	}
+
 	unsigned cur_slot = 0;
 	cur_slot = get_current_slot();
 	if (update_slot_attribute(slot_suffix_arr[cur_slot],
@@ -518,6 +535,41 @@ error:
 
 int set_active_boot_slot(unsigned slot)
 {
+	if (mGvmqPlatform) {
+		std::string err;
+		std::string misc_blk_device = get_bootloader_message_blk_device(&err);
+		if (misc_blk_device.empty()) {
+			ALOGE("Could not find bootloader message block device: %s", err.c_str());
+			return -1;
+		}
+		unsigned current_slot = get_current_slot();
+		uint32_t num_slots = get_number_slots();
+		if ((num_slots < 1) || (current_slot > num_slots - 1)) {
+			ALOGE("Invalid slot number");
+			return -1;
+		}
+		bootloader_message boot;
+		if(current_slot == 0)
+			boot.reserved[0] = 'a';
+		else
+			boot.reserved[0] = 'b';
+		if(slot == 0)
+			boot.reserved[1] = 'a';
+		else
+			boot.reserved[1] = 'b';
+		boot.reserved[2] = '\0';
+		if (!write_bootloader_message_to(boot, misc_blk_device, &err)) {
+			ALOGE("Failed to write to %s  because : %s", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		bootloader_message boot_verify;
+		if (!read_bootloader_message_from(&boot_verify, misc_blk_device, &err)) {
+			ALOGE("Failed to read from %s due to %s ", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		ALOGV("bootloader_message is : boot_verify.reserved[0] = %c, boot_verify.reserved[1] = %c,boot_verify.reserved[2] = %c",
+			boot_verify.reserved[0],boot_verify.reserved[1], boot_verify.reserved[2]);
+	}
 	map<string, vector<string>> ptn_map;
 	vector<string> ptn_vec;
 	const char ptn_list[][MAX_GPT_NAME_SIZE] = { AB_PTN_LIST };
@@ -544,10 +596,9 @@ int set_active_boot_slot(unsigned slot)
 						PTN_XBL_CFG,
 						strlen(PTN_XBL_CFG))))
 				continue;
-		//The partition list will be the list of partitions
-		//corresponding to the slot being set active
+		//The partition list will be the list of _a partitions
 		string cur_ptn = ptn_list[i];
-		cur_ptn.append(slot_suffix_arr[slot]);
+		cur_ptn.append(AB_SLOT_A_SUFFIX);
 		ptn_vec.push_back(cur_ptn);
 
 	}
@@ -612,7 +663,6 @@ error:
 	ALOGE("%s: Failed to mark slot unbootable", __func__);
 	return -1;
 }
-
 int is_slot_bootable(unsigned slot)
 {
 	int attr = 0;
