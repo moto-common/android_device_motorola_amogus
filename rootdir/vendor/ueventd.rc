@@ -200,3 +200,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # Ultrasound device
 /dev/usf1                 0660   system     system
+
+# Vibrator
+/sys/class/leds/vibrator activate 0664 system system

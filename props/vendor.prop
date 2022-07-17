@@ -1,0 +1,2 @@
+# Device specific
+import /vendor/build_${ro.boot.device}.prop
