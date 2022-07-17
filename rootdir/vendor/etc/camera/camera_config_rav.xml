@@ -134,7 +134,7 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>2</CameraId>
-    <SensorName>mot_ov02a</SensorName>
+    <SensorName>mot_ov02a_rav</SensorName>
     <EepromName>mot_ov02a</EepromName>
     <ActuatorName>mot_gt9772</ActuatorName>
     <FlashName>pmic</FlashName>

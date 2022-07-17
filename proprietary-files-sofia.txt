@@ -28,17 +28,11 @@ vendor/etc/acdbdata/Hdmi_cal.acdb:vendor/etc/acdbdata/sofiap/Hdmi_cal.acdb
 vendor/etc/acdbdata/Headset_cal.acdb:vendor/etc/acdbdata/sofiap/Headset_cal.acdb
 vendor/etc/acdbdata/Speaker_cal.acdb:vendor/etc/acdbdata/sofiap/Speaker_cal.acdb
 
-# Camera - from sofia R
-vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofia.xml
-
 # Camera - from sofiar R
-vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiar.xml
 vendor/etc/camera/dual_golden.bin:vendor/etc/camera/dual_golden_sofiar.bin
 vendor/etc/camera/mot_ov16e10_sofiarow_chromatix.xml
 vendor/etc/camera/mot_ov8856_chromatix.xml
-
-# Camera - from sofiap_ao S
-vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_sofiap.xml
+vendor/lib/libmmcamera_mot_s5k4h7.so:vendor/lib/libmmcamera_mot_s5k4h7_sofiar.so
 
 # Display Calibration - from sofia R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_auo_1080p_636.xml
