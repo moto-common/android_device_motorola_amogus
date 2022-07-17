@@ -1,6 +1,14 @@
+# Domain
 type amogus-sh, domain;
 type amogus-sh_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(amogus-sh)
 
+# Permissions
+# Exec
 allow amogus-sh vendor_toolbox_exec:file rx_file_perms;
+
+allow amogus-sh vendor_camera_data_file:file mounton;
+allow amogus-sh vendor_sensor_data_file:file { ioctl mounton };
+r_dir_file(amogus-sh, vendor_sensor_data_file)
+allow amogus-sh proc_filesystems:file r_file_perms;

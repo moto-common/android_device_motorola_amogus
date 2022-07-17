@@ -1,0 +1,2 @@
+persist.vendor.camera.customer.config u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.tof.direct u:object_r:vendor_camera_prop:s0
