@@ -235,6 +235,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=10,10
 
+# Props
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/props/build_rav.prop:$(TARGET_COPY_OUT_VENDOR)/build_rav.prop \
+    $(DEVICE_PATH)/props/build_sofia.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofia.prop \
+    $(DEVICE_PATH)/props/build_sofiap.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofiap.prop \
+    $(DEVICE_PATH)/props/build_sofiar.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofiar.prop
+
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)

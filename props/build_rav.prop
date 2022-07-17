@@ -1,0 +1,16 @@
+# Audio
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/rav/Bluetooth_cal.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/rav/General_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/rav/Global_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/rav/Handset_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/rav/Hdmi_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/rav/Headset_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/rav/Speaker_cal.acdb
+ro.boot.product.vendor.sku=rav
+
+# Camera
+persist.vendor.camera.customer.config=camera_config_rav.xml
+ro.product.bevice=rav
+
+# Density
+ro.sf.lcd_density=280
