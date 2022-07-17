@@ -222,6 +222,12 @@ PRODUCT_SOONG_NAMESPACES += \
     device/qcom/common/vendor/init
 
 # Camera
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_rav.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_rav.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_sofia.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofia.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_sofiap.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofiap.xml \
+    $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_sofiar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofiar.xml
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.tof.direct=1
 
