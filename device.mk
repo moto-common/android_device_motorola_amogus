@@ -90,8 +90,8 @@ PRODUCT_PACKAGES += \
     update_engine_client \
     update_engine_sideload \
     update_verifier \
-    bootctrl.sm4350-common \
-    bootctrl.sm4350-common.recovery
+    bootctrl.trinket \
+    bootctrl.trinket.recovery
 
 AB_OTA_PARTITIONS += \
     boot \
