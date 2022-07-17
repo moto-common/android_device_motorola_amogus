@@ -210,6 +210,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Init
 PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc \
+    $(DEVICE_PATH)/rootdir/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc \
     device/qcom/common/vendor/init/trinket/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh
 
 PRODUCT_PACKAGES += \
