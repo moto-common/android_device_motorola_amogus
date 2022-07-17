@@ -18,7 +18,7 @@ product                                                 /product                
 /dev/block/bootdevice/by-name/prodpersist               /mnt/product/persist     ext4    noatime,nosuid,nodev,barrier=1                       wait,formattable,nofail
 /dev/block/bootdevice/by-name/bluetooth                 /vendor/bt_firmware      ext4    ro,nosuid,nodev,context=u:object_r:bt_firmware_file:s0 wait,slotselect
 /devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.0.auto*     /storage/usbotg    vfat    nosuid,nodev         wait,voldmanaged=usbotg:auto
-/dev/block/bootdevice/by-name/fsg                       /vendor/fsg              ext4    ro,nosuid,nodev       wait,slotselect
+/dev/block/bootdevice/by-name/fsg                       /vendor/fsg              ext4    ro,nosuid,nodev,context=u:object_r:vendor_fsg_file:s0       wait,slotselect
 
 # Need to have this entry in here even though the mount point itself is no longer needed.
 # The update_engine code looks for this entry in order to determine the boot device address
