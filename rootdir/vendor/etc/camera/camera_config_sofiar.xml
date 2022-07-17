@@ -159,7 +159,7 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>3</CameraId>
-    <SensorName>mot_s5k4h7</SensorName>
+    <SensorName>mot_s5k4h7_sofiar</SensorName>
     <EepromName>mot_s5k4h7</EepromName>
     <FlashName>pmic</FlashName>
     <ChromatixName>mot_s5k4h7_chromatix</ChromatixName>
