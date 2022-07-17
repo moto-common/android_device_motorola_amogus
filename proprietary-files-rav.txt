@@ -13,11 +13,13 @@ vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 vendor/lib/rfsa/adsp/tas25xx_TI_1.bin
 
 # Camera-configs - from rav R
-vendor/etc/camera/camera_config.xml:vendor/etc/camera/camera_config_rav.xml
 vendor/etc/camera/dual_golden.bin
 vendor/etc/camera/mot_ov16e10_chromatix.xml
 vendor/etc/camera/mot_s5k4h7yx03_chromatix.xml
 vendor/etc/camera/mot_s5k4h7_chromatix.xml
+
+# Camera-libs - from rav R
+vendor/lib/libmmcamera_mot_ov02a.so:vendor/lib/libmmcamera_mot_ov02a_rav.so
 
 # Firmware - from rav R
 vendor/firmware/focaltech-boe-ft8009-09-0000-rav.bin
