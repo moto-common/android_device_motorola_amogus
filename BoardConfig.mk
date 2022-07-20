@@ -49,6 +49,7 @@ BOARD_VENDOR_KERNEL_MODULES += \
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
 
 # SELinux
+BOARD_USE_ENFORCING_SELINUX := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Boot Image Header
