@@ -250,6 +250,12 @@ PRODUCT_COPY_FILES += \
 
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
+# Power
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/vendor/etc/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
+PRODUCT_USES_PIXEL_POWER_HAL := true
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
