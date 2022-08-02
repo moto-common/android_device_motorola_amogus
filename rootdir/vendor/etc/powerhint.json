@@ -38,7 +38,8 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
-        "1612800",
+        "2016000",
+        "1804800",
         "1536000",
         "1401600",
         "1056000",
@@ -54,7 +55,8 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
-        "1612800",
+        "2016000",
+        "1804800",
         "1536000",
         "1401600",
         "1056000",
@@ -66,6 +68,34 @@
     },
     {
       "Name": "GPUMaxFreq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
+      "Values": [
+        "950000000",
+        "900000000",
+        "820000000",
+        "745000000",
+        "600000000",
+        "465000000",
+        "320000000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMinFreq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
+      "Values": [
+        "950000000",
+        "900000000",
+        "820000000",
+        "745000000",
+        "600000000",
+        "465000000",
+        "320000000"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "GPUMaxPwrLvl",
       "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
       "Values": [
         "0",
@@ -81,7 +111,7 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUMinFreq",
+      "Name": "GPUMinPwrLvl",
       "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
       "Values": [
         "0",
@@ -118,6 +148,7 @@
       "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
       "Values": [
         "10000",
+        "2000",
         "80"
       ],
       "ResetOnInit": true
@@ -126,6 +157,7 @@
       "Name": "TASchedtuneBoost",
       "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
+        "40",
         "30",
         "10"
       ],
@@ -256,9 +288,27 @@
     },
     {
       "Name": "F2fsRecessModeEnable",
-      "Path": "/sys/fs/f2fs/mmcblk0p77/gc_urgent",
+      "Path": "/sys/fs/f2fs/mmcblk0p80/gc_urgent",
       "Values": [
         "2",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "DoubleTap2WakeEnable",
+      "Path": "/sys/class/sensors/dt-gesture/enable",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SchedBoost",
+      "Path": "/proc/sys/kernel/sched_boost",
+      "Values": [
+        "1",
         "0"
       ],
       "ResetOnInit": true
@@ -312,7 +362,7 @@
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
-      "Node": "GPUMaxFreq",
+      "Node": "GPUMaxPwrLvl",
       "Duration": 0,
       "Value": "1"
     },
@@ -324,9 +374,15 @@
     },
     {
       "PowerHint": "INTERACTION",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "1401600"
+    },
+    {
+      "PowerHint": "INTERACTION",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
-      "Value": "30"
+      "Value": "40"
     },
     {
       "PowerHint": "INTERACTION",
@@ -357,6 +413,12 @@
       "Node": "CPUBWMinFreq",
       "Duration": 0,
       "Value": "10322"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "SchedBoost",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "DEVICE_IDLE",
@@ -434,7 +496,7 @@
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
       "Duration": 5000,
-      "Value": "10000"
+      "Value": "2000"
     },
     {
       "PowerHint": "LAUNCH",
@@ -447,6 +509,12 @@
       "Node": "DDRBigClusterMinFreq",
       "Duration": 5000,
       "Value": "13763"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMinFreq",
+      "Duration": 5000,
+      "Value": "950000000"
     },
     {
       "PowerHint": "AUDIO_LAUNCH",
@@ -474,13 +542,13 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUMinFreq",
+      "Node": "GPUMinPwrLvl",
       "Duration": 0,
       "Value": "1"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUMaxFreq",
+      "Node": "GPUMaxPwrLvl",
       "Duration": 0,
       "Value": "0"
     },
@@ -516,15 +584,21 @@
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "GPUMaxFreq",
+      "Node": "GPUMaxPwrLvl",
       "Duration": 0,
       "Value": "0"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
-      "Node": "GPUMinFreq",
+      "Node": "GPUMinPwrLvl",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "DOUBLE_TAP_TO_WAKE",
+      "Node": "DoubleTap2WakeEnable",
+      "Duration": 0,
+      "Value": "1"
     }
   ]
 }
