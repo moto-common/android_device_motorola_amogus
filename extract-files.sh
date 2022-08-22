@@ -70,6 +70,7 @@ function blob_fixup() {
     vendor/lib/hw/camera.trinket.so)
         patchelf --add-needed libcamera_shim.so "${2}"
         sed -i 's/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchdogEv/_ZN7android17CameraHalWatchdog12AutoWatchdog13startWatchhogEv/g' "${2}"
+        sed -i 's/libthermalclient/libthermapclient/g' "${2}"
         ;;
 
     # vstab
