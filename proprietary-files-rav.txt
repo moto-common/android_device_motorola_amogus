@@ -29,8 +29,8 @@ vendor/firmware/inxr_Himax_firmware.bin
 vendor/firmware/inxr_hx_criteria.csv
 vendor/firmware/inx_Himax_firmware.bin
 vendor/firmware/inx_hx_criteria.csv
-vendor/firmware/novatek_ts_fw.bin
-vendor/firmware/novatek_ts_mp.bin
+vendor/firmware/novatek_ts_fw.bin:vendor/firmware/tm_novatek_ts_fw.bin
+vendor/firmware/novatek_ts_mp.bin:vendor/firmware/tm_novatek_ts_mp.bin
 
 # QDCM - from rav R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_boev_720p_639.xml

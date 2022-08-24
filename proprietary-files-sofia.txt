@@ -65,6 +65,7 @@ vendor/firmware/spk_fast_switch2.txt
 # Firmware - from sofiar R
 vendor/firmware/aw8624_haptic.bin
 vendor/firmware/aw8624_rtp.bin
+vendor/firmware/novatek_ts_fw.bin:vendor/firmware/auo_novatek_ts_fw.bin
 
 # QDCM - from sofia R
 vendor/etc/qdcm_calib_data_mipi_mot_vid_auo_1080p_636.xml
