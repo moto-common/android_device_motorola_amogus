@@ -259,7 +259,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
 # USB
-PRODUCT_USES_PIXEL_USB_HAL := false
+PRODUCT_USES_PIXEL_USB_HAL := true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
