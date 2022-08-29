@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := fstab.$(TARGET_DEVICE)
 LOCAL_SRC_FILES := vendor/etc/fstab.qcom
@@ -17,6 +18,7 @@ LOCAL_MODULE_STEM := fstab.qcom
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_RAMDISK_OUT)
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := init.sm6125
