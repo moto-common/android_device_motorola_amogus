@@ -222,6 +222,8 @@ PRODUCT_SOONG_NAMESPACES += \
     device/qcom/common/vendor/init
 
 # Camera
+TARGET_NEEDS_RAW10_BUFFER_FIX := true
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_rav.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_rav.xml \
     $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_sofia.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofia.xml \
