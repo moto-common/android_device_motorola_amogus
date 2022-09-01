@@ -2,7 +2,7 @@
 device=$(getprop ro.boot.device)
 
 # Camera
-if [ "$device" = "sofia" ] || [ "$device" = "sofiar" ];
+if [ "$device" = "sofia" ] || [ "$device" = "sofiar" ] || [ "$device" = "doha" ];
 then
    mount -o bind /vendor/etc/camera/dual_golden_"$device".bin /vendor/etc/camera/dual_golden.bin
 fi
@@ -19,4 +19,8 @@ then
    mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_lsm6dso_0.json /vendor/etc/sensors/config/nicobar_lsm6dso_0.json
    mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_mn29xxx_0.json /vendor/etc/sensors/config/nicobar_mn29xxx_0.json
    mount -o bind /vendor/etc/sensors/config-sofiar/nicobar_mn59xxx_0.json /vendor/etc/sensors/config/nicobar_mn59xxx_0.json
+fi
+if [ "$device" = "doha" ];
+then
+   mount -o bind /vendor/etc/sensors/config-doha /vendor/etc/sensors/config
 fi

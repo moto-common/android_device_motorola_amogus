@@ -1,4 +1,4 @@
-ifeq (amogus,$(TARGET_DEVICE))
+ifneq (,$(filter amogus amogus_doha,$(TARGET_DEVICE)))
 
 LOCAL_PATH := $(call my-dir)
 

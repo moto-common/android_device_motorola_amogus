@@ -46,7 +46,7 @@ BOARD_VENDOR_KERNEL_MODULES += \
     $(wildcard device/motorola/amogus-kernel/modules/*.ko)
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB ?= $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
 
 # SELinux
 BOARD_USE_ENFORCING_SELINUX := true
@@ -63,17 +63,18 @@ BOARD_PREBUILT_DTBOIMAGE := device/motorola/amogus-kernel/dtbo.img
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 
-# Build product image
-TARGET_COPY_OUT_PRODUCT := product
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
-
 # Partition information
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_DTBOIMG_PARTITION_SIZE := 25165824 # (0x1800000)
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_EROFS_PCLUSTER_SIZE := 262144
+
+ifneq ($(TARGET_DEVICE),amogus_doha)
+BOARD_DTBOIMG_PARTITION_SIZE := 25165824 # (0x1800000)
+# Build product image
+TARGET_COPY_OUT_PRODUCT := product
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
 
 BOARD_SUPER_PARTITION_SIZE := 8925478912
 BOARD_SUPER_PARTITION_GROUPS := mot_dynamic_partitions
@@ -85,6 +86,7 @@ BOARD_MOT_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     product \
     vendor
 
+endif
 # This platform has a metadata partition: declare this
 # to create a mount point for it
 BOARD_USES_METADATA_PARTITION := true

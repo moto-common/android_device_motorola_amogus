@@ -96,11 +96,15 @@ PRODUCT_PACKAGES += \
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
-    product \
-    recovery \
     system \
     vendor \
     vbmeta
+
+ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
+AB_OTA_PARTITIONS += \
+    product \
+    recovery
+endif
 
 # Dynamic Partitions: build fastbootd
 PRODUCT_PACKAGES += \
