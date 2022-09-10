@@ -38,7 +38,7 @@ PRODUCT_VENDOR_KERNEL_HEADERS := device/motorola/amogus-kernel/kernel-headers
 
 # Platform
 TRINKET := trinket
-KERNEL_VERSION := 4.14
+TARGET_KERNEL_VERSION := 4.14
 PRODUCT_PLATFORM_MOT := true
 TARGET_BOARD_PLATFORM := $(TRINKET)
 
