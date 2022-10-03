@@ -265,6 +265,11 @@ PRODUCT_USES_PIXEL_POWER_HAL := true
 # USB
 PRODUCT_USES_PIXEL_USB_HAL := true
 
+# Recovery
+ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
+include $(DEVICE_PATH)/device-recovery.mk
+endif
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
