@@ -42,11 +42,6 @@ TARGET_KERNEL_VERSION := 4.14
 PRODUCT_PLATFORM_MOT := true
 TARGET_BOARD_PLATFORM := $(TRINKET)
 
-# Telephony Packages (AOSP)
-PRODUCT_PACKAGES += \
-    InCallUI \
-    Stk
-
 # Overlays
 PRODUCT_PACKAGES += \
     ravFrameworkOverlay \
@@ -214,8 +209,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-ets2.rc \
-    $(DEVICE_PATH)/rootdir/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc \
     device/qcom/common/vendor/init/trinket/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh
 
 PRODUCT_PACKAGES += \
@@ -269,6 +262,10 @@ PRODUCT_USES_PIXEL_USB_HAL := true
 ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
 include $(DEVICE_PATH)/device-recovery.mk
 endif
+
+# Fingerprint
+TARGET_USES_CHIPONE_FINGERPRINT := true
+TARGET_USES_FPC_FINGERPRINT := true
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
