@@ -264,7 +264,7 @@ include $(DEVICE_PATH)/device-recovery.mk
 endif
 
 # Fingerprint
-TARGET_USES_CHIPONE_FINGERPRINT := true
+TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
 
 # Inherit from those products. Most specific first.
