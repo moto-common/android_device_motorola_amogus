@@ -56,6 +56,7 @@ vendor/firmware/spk_fast_switch2.txt
 
 # Firmware (Touchscreen) - from sofia R
 vendor/firmware/focaltech-auo-ft8756-0b-01-sofiap.bin
+vendor/firmware/focaltech-auo-ft8756-08-01-sofia.bin
 vendor/firmware/focaltech-ft8756-0e-01-sofiar.bin
 vendor/firmware/focaltech-tianma-ft8756-0c-01-sofia.bin
 vendor/firmware/focaltech-tianma-ft8756-11-01-sofiap.bin
