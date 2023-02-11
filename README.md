@@ -1,14 +1,14 @@
-Trinket platform
+Moto G(8) Family
 ============
 
 ## Copyrights
-Copyright (C) LineageOS Modded Project/Electimon 2022
+Copyright (C) Electimon 2023
 
 Copyright (C) Sony Mobile Communications 2019
 
 ## Device Tree
 
-Android device configuration for the trinket platform (**SM6125**).
+Android device configuration for the moto trinket platform (**SM6125**).
 
 ### Supported devices
 
