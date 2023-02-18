@@ -267,6 +267,11 @@ endif
 TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.base@1.0.vendor
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
