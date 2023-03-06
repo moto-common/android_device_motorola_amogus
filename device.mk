@@ -19,10 +19,6 @@ DEVICE_PATH := device/motorola/amogus
 DEVICE_PACKAGE_OVERLAYS += \
     device/motorola/amogus/overlay
 
-# Device DTB/Kernel
-PRODUCT_COPY_FILES += \
-    device/motorola/amogus-kernel/Image.gz:kernel
-
 # Device Init
 PRODUCT_PACKAGES += \
     fstab.amogus \
@@ -176,10 +172,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
-# Platform specific init
-PRODUCT_PACKAGES += \
-    ueventd
-
 # Sensors
 # hardware.ssc.so links against display mappers, of which
 # the interface libraries are explicitly included here:
@@ -208,9 +200,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gatekeeper.disable_spu=true
 
 # Init
-PRODUCT_COPY_FILES += \
-    device/qcom/common/vendor/init/trinket/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh
-
 PRODUCT_PACKAGES += \
     init.amogus.sh
 
@@ -220,6 +209,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Camera
 TARGET_NEEDS_RAW10_BUFFER_FIX := true
+TARGET_USES_64BIT_CAMERA := false
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/vendor/etc/camera/camera_config_rav.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_rav.xml \
