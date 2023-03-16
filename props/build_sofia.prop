@@ -11,7 +11,6 @@ ro.boot.product.vendor.sku=sofia
 
 # Camera
 persist.vendor.camera.customer.config=camera_config_sofia.xml
-ro.product.bevice=sofia
 
 # Density
 ro.sf.lcd_density=420

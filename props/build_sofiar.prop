@@ -10,7 +10,6 @@ ro.boot.product.vendor.sku=sofiar
 
 # Camera
 persist.vendor.camera.customer.config=camera_config_sofiar.xml
-ro.product.bevice=sofiar
 
 # Density
 ro.sf.lcd_density=420

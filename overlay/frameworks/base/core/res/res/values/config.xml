@@ -111,9 +111,6 @@
         <item>255</item>
     </integer-array>
 
-    <!-- True if the device supports system navigation keys. -->
-    <bool name="config_supportSystemNavigationKeys">true</bool>
-
     <!-- Device configuration adjusting the /proc/sys/vm/extra_free_kbytes tunable in the kernel
          (if it exists).  0 uses the default value chosen by ActivityManager.  A positive value
          will increase the amount of memory that the kernel tries to keep free, reducing
