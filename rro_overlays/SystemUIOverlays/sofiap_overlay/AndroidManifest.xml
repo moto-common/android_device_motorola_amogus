@@ -17,14 +17,12 @@
 */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:compileSdkVersion="29"
-    package="org.omnirom.sofiap.systemuioverlay"
-    platformBuildVersionCode="29">
-    <application android:extractNativeLibs="false"/>
+    package="com.android.systemui.sofiap">
+
     <overlay
         android:isStatic="true"
-        android:priority="10"
+        android:priority="800"
         android:requiredSystemPropertyName="ro.boot.device"
         android:requiredSystemPropertyValue="sofiap"
-        android:targetPackage="com.android.systemui"/>
+        android:targetPackage="com.android.systemui" />
 </manifest>

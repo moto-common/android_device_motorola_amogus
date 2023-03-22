@@ -133,11 +133,11 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    ravFrameworkOverlay \
-    sofiaFrameworkOverlay \
-    sofiapFrameworkOverlay \
-    sofiapSFrameworkOverlay \
-    sofiarFrameworkOverlay \
+    ravFrameworksOverlay \
+    sofiaFrameworksOverlay \
+    sofiapFrameworksOverlay \
+    sofiapSFrameworksOverlay \
+    sofiarFrameworksOverlay \
     ravSystemUIOverlay \
     sofiaSystemUIOverlay \
     sofiapSystemUIOverlay \

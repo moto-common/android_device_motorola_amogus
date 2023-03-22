@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
 ** Copyright 2020, The Android Open Source Project
@@ -17,14 +17,10 @@
 */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:compileSdkVersion="29"
-    package="org.omnirom.rav.frameworkoverlay"
-    platformBuildVersionCode="29">
-    <application android:extractNativeLibs="false"/>
+    package="com.android.amogus">
+
     <overlay
         android:isStatic="true"
-        android:priority="10"
-        android:requiredSystemPropertyName="ro.boot.device"
-        android:requiredSystemPropertyValue="rav"
-        android:targetPackage="android"/>
+        android:priority="799"
+        android:targetPackage="android" />
 </manifest>

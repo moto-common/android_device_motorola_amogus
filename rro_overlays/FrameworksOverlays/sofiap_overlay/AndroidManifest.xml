@@ -17,12 +17,12 @@
 */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.systemui.sofiap">
+    package="com.android.sofiap">
 
     <overlay
         android:isStatic="true"
         android:priority="800"
         android:requiredSystemPropertyName="ro.boot.device"
-        android:requiredSystemPropertyValue="sofiap_sprout"
-        android:targetPackage="com.android.systemui" />
+        android:requiredSystemPropertyValue="sofiap"
+        android:targetPackage="android" />
 </manifest>
