@@ -36,47 +36,9 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Audio - TAS2562 (RAV)
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_platform_info_moto_rav.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_policy_configuration.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_rav/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/audio_policy_volumes.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_rav/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/default_volume_tables.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_rav/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_rav/mixer_paths_moto_rav.xml
-
-# Audio - Cirrus (SOFIAP)
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_platform_info_moto_sofiap.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_policy_configuration.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiap/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/audio_policy_volumes.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiap/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/default_volume_tables.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiap/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiap/mixer_paths_moto_sofiap.xml
-
-# Audio - TAS2562 (SOFIAR)
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_platform_info_moto_sofiar.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_policy_configuration.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiar/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/audio_policy_volumes.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiar/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/default_volume_tables.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofiar/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofiar/mixer_paths_moto_sofiar.xml
-
-# Audio - Cirrus (SOFIA)
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/audio_platform_info_moto_sofia.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/audio_policy_configuration.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofia/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/audio_policy_volumes.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofia/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/default_volume_tables.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/audio/sku_sofia/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sofia/mixer_paths_moto_sofia.xml
-
 # Camera
 TARGET_NEEDS_RAW10_BUFFER_FIX := true
 TARGET_USES_64BIT_CAMERA := false
-
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/camera/camera_config_rav.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_rav.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/camera/camera_config_sofia.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofia.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/camera/camera_config_sofiap.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofiap.xml \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/camera/camera_config_sofiar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config_sofiar.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.tof.direct=1
@@ -103,13 +65,6 @@ TARGET_USES_DYNAMIC_PARTITIONS := true
 TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
 
-## FPC Gestures
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/usr/idc/uinput-egis.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-egis.idc \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/usr/keylayout/uinput-egis.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-egis.kl \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/usr/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/usr/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
-
 # Gatekeeper
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gatekeeper.disable_spu=true
@@ -122,14 +77,6 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.amogus.sh
-
-# Media
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
-
-# MSM IRQ Balancer configuration file
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -151,9 +98,6 @@ PRODUCT_PLATFORM_MOT := true
 TARGET_BOARD_PLATFORM := $(TRINKET)
 
 # Power
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
 # Props
@@ -168,12 +112,6 @@ TARGET_VENDOR_PROP += $(PLATFORM_COMMON_PATH)/props/vendor.prop
 # QCOM Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcom.bluetooth.soc=cherokee
-
-# Qualcomm WiFi Configuration
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(PLATFORM_COMMON_PATH)/rootdir/vendor/etc/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Recovery
 ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
