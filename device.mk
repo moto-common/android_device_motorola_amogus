@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
 
 # Device Init
 PRODUCT_PACKAGES += \
-    fstab.amogus \
     ramdisk-fstab.amogus
 
 # Dynamic Partitions
@@ -101,11 +100,7 @@ TARGET_BOARD_PLATFORM := $(TRINKET)
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
 # Props
-PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/props/build_rav.prop:$(TARGET_COPY_OUT_VENDOR)/build_rav.prop \
-    $(PLATFORM_COMMON_PATH)/props/build_sofia.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofia.prop \
-    $(PLATFORM_COMMON_PATH)/props/build_sofiap.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofiap.prop \
-    $(PLATFORM_COMMON_PATH)/props/build_sofiar.prop:$(TARGET_COPY_OUT_VENDOR)/build_sofiar.prop
+$(call copy-files-recursive,$(PLATFORM_COMMON_PATH)/props,$(TARGET_COPY_OUT_VENDOR))
 
 TARGET_VENDOR_PROP += $(PLATFORM_COMMON_PATH)/props/vendor.prop
 
