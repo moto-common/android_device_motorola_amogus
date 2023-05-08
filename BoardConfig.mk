@@ -25,9 +25,6 @@ TARGET_2ND_ARCH_VARIANT := armv8-a
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 
-# Recovery
-TARGET_RECOVERY_FSTAB ?= $(DEVICE_PATH)/rootdir/vendor/etc/fstab.qcom
-
 # SELinux
 BOARD_USE_ENFORCING_SELINUX := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
