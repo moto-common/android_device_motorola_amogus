@@ -77,6 +77,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.amogus.sh
 
+# Model
+PRODUCT_MODEL := moto g(8) family
+
 # Overlays
 PRODUCT_PACKAGES += \
     ravFrameworksOverlay \
