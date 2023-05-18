@@ -17,6 +17,7 @@ PLATFORM_COMMON_PATH := device/motorola/amogus
 
 # A/B support
 AB_OTA_UPDATER := true
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 AB_OTA_PARTITIONS += \
     boot \
