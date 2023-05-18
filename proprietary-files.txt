@@ -683,7 +683,6 @@ framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
 -system_ext/priv-app/ims/ims.apk|95051a45d323ff6ca81870f0e28d5d66cc90d08d
 
 # Radio
--system_ext/app/atfwd/atfwd.apk
 #-system_ext/app/datastatusnotification/datastatusnotification.apk
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/lib/vendor.qti.hardware.radio.am@1.0.so
