@@ -54,10 +54,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     amogus_folders
 
-# Device Init
-PRODUCT_PACKAGES += \
-    ramdisk-fstab.amogus
-
 # Dynamic Partitions
 TARGET_USES_DYNAMIC_PARTITIONS := true
 
