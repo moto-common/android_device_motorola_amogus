@@ -1,3 +1,11 @@
+# A/B Partitions
+/dev/block/platform/soc/4744000\.sdhci/by-name/logo_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000\.sdhci/by-name/fsg_[ab] u:object_r:vendor_modem_block_device:s0
+/dev/block/platform/soc/4744000\.sdhci/by-name/multiimgoem_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000\.sdhci/by-name/multiimgqti_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000\.sdhci/by-name/oem_[ab] u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/4744000\.sdhci/by-name/prov_[ab] u:object_r:vendor_custom_ab_block_device:s0
+
 # Camera
 /vendor/etc/camera(/.*)? u:object_r:vendor_camera_data_file:s0
 
