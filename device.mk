@@ -55,7 +55,7 @@ PRODUCT_PACKAGES += \
     amogus_folders
 
 # Dynamic Partitions
-TARGET_USES_DYNAMIC_PARTITIONS := true
+TARGET_USES_DYNAMIC_PARTITIONS ?= true
 
 # Fingerprint
 TARGET_USES_EGISTEC_FINGERPRINT := true
