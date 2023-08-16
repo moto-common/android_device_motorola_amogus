@@ -32,6 +32,12 @@ ifneq ($(TARGET_IS_AMOGUS_DOHA),true)
       recovery
 endif
 
+AB_OTA_POSTINSTALL_CONFIG := \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=erofs \
+    POSTINSTALL_OPTIONAL_system=true
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
@@ -89,6 +95,21 @@ PRODUCT_PACKAGES += \
     sofiapSystemUIOverlay \
     sofiapSSystemUIOverlay \
     sofiarSystemUIOverlay
+
+## Regulatory
+PRODUCT_PACKAGES += \
+    XT2041-1RegulatoryOverlay \
+    XT2041-3RegulatoryOverlay \
+    XT2041-4RegulatoryOverlay \
+    XT2041-5RegulatoryOverlay \
+    XT2041-6RegulatoryOverlay \
+    XT2041-7RegulatoryOverlay \
+    XT2043-7RegulatoryOverlay \
+    XT2043-8RegulatoryOverlay \
+    XT2045-1RegulatoryOverlay \
+    XT2045-2RegulatoryOverlay \
+    XT2045-3RegulatoryOverlay \
+    XT2045-6RegulatoryOverlay
 
 # Platform
 TRINKET := trinket

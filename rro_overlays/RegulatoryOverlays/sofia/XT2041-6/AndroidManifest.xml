@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+        package="com.android.settings.sofia.regulatory6">
+    <overlay
+        android:isStatic="true"
+        android:priority="800"
+        android:requiredSystemPropertyName="ro.boot.hardware.sku"
+        android:requiredSystemPropertyValue="XT2041-6"
+        android:targetPackage="com.android.settings" />
+</manifest>

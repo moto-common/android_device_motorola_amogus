@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "XT2041-7RegulatoryOverlay",
+    vendor: true,
+}
