@@ -6,6 +6,7 @@ persist.vendor.audio.calfile3=/vendor/etc/acdbdata/sofiap/Handset_cal.acdb
 persist.vendor.audio.calfile4=/vendor/etc/acdbdata/sofiap/Hdmi_cal.acdb
 persist.vendor.audio.calfile5=/vendor/etc/acdbdata/sofiap/Headset_cal.acdb
 persist.vendor.audio.calfile6=/vendor/etc/acdbdata/sofiap/Speaker_cal.acdb
+persist.vendor.audio.calfile7=/vendor/etc/acdbdata/sofiap/Codec_cal.acdb
 ro.boot.product.vendor.sku=sofiap
 
 # Camera
