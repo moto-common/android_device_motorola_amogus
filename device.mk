@@ -56,6 +56,9 @@ PRODUCT_PACKAGES += \
     libgbp_shim \
     libgui_vendor
 
+# Device Characteristics
+DEVICE_CHARACTERISTICS += fm
+
 # Device Folders
 PRODUCT_PACKAGES += \
     amogus_folders
