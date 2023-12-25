@@ -21,6 +21,6 @@
 
     <dimen name="system_icons_keyguard_padding_end">12dp</dimen>
     <dimen name="status_bar_padding_end">12dp</dimen>
-    <dimen name="status_bar_padding_top">11dp</dimen>
+    <dimen name="status_bar_padding_top">0dp</dimen>
 
 </resources>
