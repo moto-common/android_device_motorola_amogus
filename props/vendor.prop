@@ -1,2 +1,6 @@
 # Device specific
 import /vendor/build_${ro.boot.device}.prop
+
+# SoC
+ro.soc.manufacturer=QTI
+ro.soc.model=SM6125
