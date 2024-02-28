@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
     libgui_vendor
 
 # Device Characteristics
-DEVICE_CHARACTERISTICS += fm
+DEVICE_CHARACTERISTICS += fm erofs
 
 # Device Folders
 PRODUCT_PACKAGES += \
