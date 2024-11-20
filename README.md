@@ -15,6 +15,6 @@ Android device configuration for the moto trinket platform (**SM6125**).
 | Device | Codename |
 |-|:-:|
 | Moto G8/G Fast (2020) | rav |
-| Moto G Power (2020) | sofia |
+| Moto G Power/G8 Power (2020) | sofia/sofiar |
 | Moto G Stylus / G Pro (2020) | sofiap |
-| Moto G8 Power | sofiar |
+
